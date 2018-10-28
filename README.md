@@ -7,6 +7,9 @@ http://gun0912.tistory.com/76
 ### 같은코드 서로 다른 앱 만들기  
 http://gun0912.tistory.com/74
 
+### Flavor 공식문서  
+https://developer.android.com/studio/build/build-variants
+
 ### Log  
 
 ```
