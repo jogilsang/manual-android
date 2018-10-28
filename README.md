@@ -4,6 +4,9 @@ android for me
 ### build 시간 줄이기  
 http://gun0912.tistory.com/76
 
+### 같은코드 서로 다른 앱 만들기  
+http://gun0912.tistory.com/74
+
 ### Log  
 
 ```
