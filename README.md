@@ -1,6 +1,9 @@
 # manual-android
 android for me
 
+### build 시간 줄이기  
+http://gun0912.tistory.com/76
+
 ### Log  
 
 ```
