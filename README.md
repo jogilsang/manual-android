@@ -1,6 +1,10 @@
 # manual-android
 android for me
 
+### Reference
+
+Android Cheatsheet for Graphic Designers :  
+http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/
 
 ### 단축키
 
