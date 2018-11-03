@@ -6,6 +6,27 @@ android for me
 Android Cheatsheet for Graphic Designers :  
 http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/
 
+Android sample for Developer :  
+https://developer.android.com/samples/
+
+The Busy Coder's Guide to Android Development :  
+https://commonsware.com/Android/
+
+apps-for-android :  
+https://code.google.com/archive/p/apps-for-android/
+
+List of free and open-source Android applications :  
+https://en.wikipedia.org/wiki/List_of_free_and_open-source_Android_applications
+
+Google I/O Android App :  
+https://github.com/google/iosched
+
+Newly added links :  
+http://aopensource.com/
+
+lastfm/lastfm-android :  
+https://github.com/lastfm/lastfm-android
+
 ### 단축키
 
 ctrl + shift + u : 대문자,소문자 변환  
