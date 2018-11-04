@@ -27,7 +27,7 @@ http://aopensource.com/
 lastfm/lastfm-android :  
 https://github.com/lastfm/lastfm-android
 
-### 
+### 공부.....
 
 Android 6.0(API 레벨 23)부터 사용자는 앱이 설치될 때가 아니라 앱이 실행되는 중에 앱에 권한을 부여합니다. 이 접근방식에서는 사용자가 앱을 설치하거나 업데이트할 때 권한을 부여할 필요가 없으므로 앱 설치 과정이 간소화됩니다. 또한 사용자가 앱의 기능을 더 세부적으로 제어할 수 있습니다. 예를 들어, 기기 위치가 아니라 카메라에 대한 액세스 권한을 카메라 앱에 부여하도록 선택할 수 있습니다. 사용자는 앱 설정 화면으로 이동하여 언제든지 권한을 취소할 수 있습니다.
 
@@ -40,8 +40,13 @@ ctrl + d : 한줄 자동 복사
 ctrl + y : 한줄 자동 삭제  
 
 ### 위치정보 가져오기
-예제
-https://medium.com/@ssaurel/getting-gps-location-on-android-with-fused-location-provider-api-1001eb549089
+
+Geocoder 설명 
+https://m.blog.naver.com/PostView.nhn?blogId=trylsj&logNo=220708881021&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F#
+
+위도,경도 예제( 퍼미션 코드 따로넣어야함 )
+http://bitsoul.tistory.com/135
+
 
 ### 주소록에서 번호 pick하기
 ```
