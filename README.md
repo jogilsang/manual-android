@@ -83,6 +83,15 @@ super.onActivityResult(requestCode, resultCode, data);
 출처: http://jhrun.tistory.com/150 [JHRunning]
 ```
 
+### TextView 흐르게하기
+```
+txtCurrentPositionInfo = (TextView)item_fragment_tab_1_2.findViewById(R.id.item_text_1);
+txtCurrentPositionInfo.setSelected(true);
+
+android:ellipsize="marquee"
+android:singleLine="true"
+	    
+```
 ### build 시간 줄이기  
 http://gun0912.tistory.com/76
 
