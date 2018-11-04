@@ -35,6 +35,10 @@ ctrl + alt + L : 자동정렬
 ctrl + d : 한줄 자동 복사  
 ctrl + y : 한줄 자동 삭제  
 
+### 위치정보 가져오기
+예제
+https://medium.com/@ssaurel/getting-gps-location-on-android-with-fused-location-provider-api-1001eb549089
+
 ### 주소록에서 번호 pick하기
 ```
 1. 버튼등 OnClickListener등에 넣어 ﻿연락처 선택 화면이 나오게 합니다.
