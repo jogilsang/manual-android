@@ -117,6 +117,28 @@ public static void showLogDebug(String tag, String msg) {
 
 ```
 
+### ToggleButton
+```
+        <ToggleButton
+            android:gravity="center"
+            android:id="@+id/item_text_2"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textOff="현재위치"
+            android:textOn="현재위치"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_small"
+            android:drawableLeft="@drawable/ic_my_location_gray"
+            android:background="@drawable/rounded_border_edittext"
+            />
+```
+
+
 ### AsyncTask
 
 ```
