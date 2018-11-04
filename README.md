@@ -35,6 +35,32 @@ ctrl + alt + L : 자동정렬
 ctrl + d : 한줄 자동 복사  
 ctrl + y : 한줄 자동 삭제  
 
+### 주소록에서 번호 pick하기
+```
+1. 버튼등 OnClickListener등에 넣어 ﻿연락처 선택 화면이 나오게 합니다.
+Intent intent = new Intent(Intent.ACTION_PICK);
+	 intent.setData(ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
+         startActivityForResult(intent, 0);
+
+
+2. 연락처 선택을 하면 결과값을 받아옵니다.
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+if(resultCode == RESULT_OK)
+{
+Cursor cursor = getContentResolver().query(data.getData(), 
+new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, 
+ContactsContract.CommonDataKinds.Phone.NUMBER}, null, null, null);
+cursor.moveToFirst();
+ 	                name = cursor.getString(0);        //0은 이름을 얻어옵니다.
+           number = cursor.getString(1);   //1은 번호를 받아옵니다.
+            cursor.close();
+}
+super.onActivityResult(requestCode, resultCode, data);
+} 
+출처: http://jhrun.tistory.com/150 [JHRunning]
+```
+
 ### build 시간 줄이기  
 http://gun0912.tistory.com/76
 
