@@ -47,6 +47,15 @@ https://m.blog.naver.com/PostView.nhn?blogId=trylsj&logNo=220708881021&proxyRefe
 위도,경도 예제( 퍼미션 코드 따로넣어야함 )
 http://bitsoul.tistory.com/135
 
+getContryname() : 국가명  
+getAdminArea() : 시  
+getLocality() : 인천시 서구 -> 인천시  
+getSubLocality() : 인천시 서구 -> 서구  
+getThoroughfare() : 동  
+getSubThoroughfare() : 번지  
+getFeatureName() : 번지  
+getAddressLine(0).toString() // 국가명 시 군 구 동 번지  
+
 
 ### 주소록에서 번호 pick하기
 ```
