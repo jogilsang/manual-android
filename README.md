@@ -71,6 +71,13 @@ ctrl + w : 단락선택
 
 ```
 
+### Edittext focuse 해제
+```
+android:focusable="true"
+ android:focusableInTouchMode="true"
+출처: http://gogorchg.tistory.com/entry/Android-EditText-자동-포커스-제거 [항상 초심으로]
+```
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
