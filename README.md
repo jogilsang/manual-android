@@ -2,6 +2,8 @@
 android for me
 
 ### Reference
+안드로이드 Q&A  
+http://www.masterqna.com/android/
 
 Android Cheatsheet for Graphic Designers :  
 http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/
