@@ -38,9 +38,10 @@ ctrl + alt + o : import 구문정리
 ctrl + alt + L : 자동정렬  
 ctrl + d : 한줄 자동 복사  
 ctrl + y : 한줄 자동 삭제  
+ctrl + w : 단락선택
 
 ### 위치정보 가져오기
-
+```
 Geocoder 설명 
 https://m.blog.naver.com/PostView.nhn?blogId=trylsj&logNo=220708881021&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F#
 
@@ -55,7 +56,26 @@ getThoroughfare() : 동
 getSubThoroughfare() : 번지  
 getFeatureName() : 번지  
 getAddressLine(0).toString() // 국가명 시 군 구 동 번지  
+```
 
+### 공유하기
+```
+Intent msg = new Intent(Intent.ACTION_SEND);
+msg.addCategory(Intent.CATEGORY_DEFAULT);
+msg.putExtra(Intent.EXTRA_SUBJECT,"주제");
+msg.putExtra(Intent.EXTRA_TEXT,"내용");
+msg.putExtra(Intent.EXTRA_TITLE,"제목");
+msg.setType("text/plain");
+startActivity(Intent.createChooser(msg, "공유"));
+```
+
+### 전화걸기
+```
+<string name="data_phone">tel:1111111</string>
+startActivity(new Intent("android.intent.action.CALL", Uri.parse(tel)));
+startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
+http://mainia.tistory.com/4884
+```
 
 ### 주소록에서 번호 pick하기
 ```
@@ -92,6 +112,8 @@ android:ellipsize="marquee"
 android:singleLine="true"
 	    
 ```
+
+
 ### build 시간 줄이기  
 http://gun0912.tistory.com/76
 
