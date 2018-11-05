@@ -40,6 +40,17 @@ ctrl + d : 한줄 자동 복사
 ctrl + y : 한줄 자동 삭제  
 ctrl + w : 단락선택
 
+### 문자열 리소스
+```
+& : &amp;
+< : &lt;
+> : &gt;
+' : &apos;
+" : &quot;
+출처 : http://www.w3schools.com/html/html_entities.asp
+
+```
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
