@@ -57,8 +57,44 @@ getSubThoroughfare() : 번지
 getFeatureName() : 번지  
 getAddressLine(0).toString() // 국가명 시 군 구 동 번지  
 
+// 위치제공자 권한 true,false 
+public class MainActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
+        // 위치기반 어플리케이션 : 사용자의 위치를 활용한 어플리케이션
+        // 폰에서 위치정보를 얻는 방법
+        // 1. GPS - 위성에서 정보를 받아 삼각측량으로 위치를 계산,
+        //           정확하다, 건물 안에서는 안된다
+        // 2. 3G망 - 인접된 전화기지국에서오는 전파의 시간 차이로 위치를 계산,
+        //          실내에서도 가능
+        // 3. WiFi 의 AP
+
+        // ■ 위치정보를 사용하려면, 권한 설정을 해야함 AndroidManifest.xml
+        //           android.permission.ACCESS_FINE_LOCATION
+
+        TextView tv = (TextView)findViewById(R.id.textView2);
+
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        // 위치관리자 객체를 얻어온다
+
+//        lm.getBestProvider(criteria, enabledOnly)
+        List<String> list = lm.getAllProviders(); // 위치제공자 모두 가져오기
+
+        String str = ""; // 출력할 문자열
+        for (int i = 0; i < list.size(); i++) {
+            str += "위치제공자 : " + list.get(i) + ", 사용가능여부 -"
+                    + lm.isProviderEnabled(list.get(i)) +"\n";
+        }
+        tv.setText(str);
+    } // end of onCreate
+} // end of class
+출처: http://bitsoul.tistory.com/130?category=623707 [Happy Programmer~]
+
+Geocoder 주소가져오기(위도,경도 넣으면)
    public static String getCompleteAddressString(Context context, double LATITUDE, double LONGITUDE) {
         String strAdd = "";
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
