@@ -51,6 +51,24 @@ ctrl + w : 단락선택
 " : &quot;
 출처 : http://www.w3schools.com/html/html_entities.asp
 
+### 퍼미션 여러개
+
+```
+    /**
+     * Prompts the user for permission to use the device location.
+     */
+    private void getPermission(){
+
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION,
+                                        Manifest.permission.CALL_PHONE
+                    },
+                    1000);
+
+    }
+
+```
+
 ```
 
 ### 위치정보 가져오기
