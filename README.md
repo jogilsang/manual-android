@@ -78,6 +78,19 @@ android:focusable="true"
 출처: http://gogorchg.tistory.com/entry/Android-EditText-자동-포커스-제거 [항상 초심으로]
 ```
 
+### 키해시
+https://developers.kakao.com/docs/android
+
+### 안드로이드 다음 API 지도
+개발자 및 앱 등록 :  
+https://developers.kakao.com/
+
+오류해결 :  
+https://blog.naver.com/jogilsang/221393218449
+
+SDK 다운 및 예제 :  
+http://apis.map.daum.net/android/guide/
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
