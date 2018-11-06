@@ -91,6 +91,44 @@ https://blog.naver.com/jogilsang/221393218449
 SDK 다운 및 예제 :  
 http://apis.map.daum.net/android/guide/
 
+```
+    public void setDaumMapCurrentLocation(double latitude, double longitude) {
+
+        // 중심점 변경
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(latitude, longitude), true);
+
+        // 줌 레벨 변경
+        mapView.setZoomLevel(4, true);
+        
+        // 중심점 변경 + 줌 레벨 변경
+        //mapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(latitude, longitude), 9, true);
+        
+        // 줌 인
+        mapView.zoomIn(true);
+        
+        // 줌 아웃
+        //mapView.zoomOut(true);
+
+        // 마커 생성
+        setDaumMapCurrentMarker();
+
+    }
+    
+    public void setDaumMapCurrentMarker(){
+
+        MapPOIItem marker = new MapPOIItem();
+        marker.setItemName("현재 위치");
+        marker.setTag(0);
+        marker.setMapPoint(MapPoint.mapPointWithGeoCoord(latitude, longitude));
+        marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        mapView.addPOIItem(marker);
+
+
+    }
+```
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
