@@ -129,6 +129,29 @@ http://apis.map.daum.net/android/guide/
     }
 ```
 
+### gradient (그래디언트)
+앵글별 정리 :
+https://blog.naver.com/jogilsang/221393957129
+
+참고사이트 :  
+https://uigradients.com/#FacebookMessenger
+
+참고소스 :  
+```
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+
+    <gradient
+        android:startColor="#00c6ff"
+        android:endColor="#0072ff"
+        android:angle="270"
+        android:type="linear"
+        ></gradient>
+</shape>
+```
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
