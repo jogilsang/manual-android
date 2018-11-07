@@ -81,6 +81,27 @@ android:focusable="true"
 출처: http://gogorchg.tistory.com/entry/Android-EditText-자동-포커스-제거 [항상 초심으로]
 ```
 
+### 플로팅액션버튼 floatingactionbutton
+```
+                                <android.support.design.widget.FloatingActionButton
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/btn_1"
+                                    android:backgroundTint="#12FFF7"
+                                    app:elevation="6dp"
+                                    app:borderWidth="0dp"
+                                    android:src="@drawable/ic_radio_button_checked_black_24dp"
+
+                                    />
+```
+코드로 색깔 못바꿈
+그냥 눌럿을떄 효과? 정도
+```
+                       btn1.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));  
+                        btn1.setRippleColor(Color.BLUE);  
+			```
+
 ### 키해시
 https://developers.kakao.com/docs/android
 
