@@ -71,6 +71,9 @@ ctrl + w : 단락선택
 
 ```
 
+### 색깔 소스
+getResources().getColor(R.color.white)  
+
 ### Edittext focuse 해제
 ```
 android:focusable="true"
