@@ -129,6 +129,10 @@ http://apis.map.daum.net/android/guide/
     }
 ```
 
+### svg -> vector 변환
+변환 사이트 :  
+http://inloop.github.io/svg2android/
+
 ### gradient (그래디언트)
 앵글별 정리 :
 https://blog.naver.com/jogilsang/221393957129
