@@ -50,6 +50,15 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
+### 문자치환
+```
+String a = "무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ";	
+//replaceAll([기존문자],[바꿀문자])
+a= a.replaceAll("대한", "민국");
+System.out.println(a);
+//결과값 : 무궁화 삼천리 화려강산 민국사람 민국으로 길이 보전하세
+```
+
 ### 문자열 리소스
 ```
 & : &amp;
