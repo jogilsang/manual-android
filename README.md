@@ -42,6 +42,14 @@ ctrl + d : 한줄 자동 복사
 ctrl + y : 한줄 자동 삭제  
 ctrl + w : 단락선택
 
+### 실시간 시간 받아오기
+```
+long time = System.currentTimeMillis();
+SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+String str = dayTime.format(new Date(time));
+//: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
+```
+
 ### 문자열 리소스
 ```
 & : &amp;
