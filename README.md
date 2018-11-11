@@ -50,8 +50,37 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
-### 문자치환
+### 문자열
 ```
+- 문자열 자르기, 특정 문자 기준으로 가져가기
+
+// @를 기준으로 문자열을 추출할 것이다.
+String mail = "abced@naver.com";
+
+// 먼저 @ 의 인덱스를 찾는다 - 인덱스 값: 5
+int idx = mail.indexOf("@"); 
+
+// @ 앞부분을 추출
+// substring은 첫번째 지정한 인덱스는 포함하지 않는다.
+// 아래의 경우는 첫번째 문자열인 a 부터 추출된다.
+String mail1 = mail.substring(0, idx);
+
+// 뒷부분을 추출
+// 아래 substring은 @ 바로 뒷부분인 n부터 추출된다.
+String mail2 = mail.substring(idx+1);
+
+System.out.println("mail1 : "+mail1);
+System.out.println("mail2 : "+mail2);
+
+
+출처: http://all-record.tistory.com/118 [세상의 모든 기록]
+
+```
+
+
+```
+- 문자치환
+
 String a = "무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 ";	
 //replaceAll([기존문자],[바꿀문자])
 a= a.replaceAll("대한", "민국");
