@@ -47,6 +47,10 @@ ctrl + w : 단락선택
 source :   
 http://nine01223.tistory.com/101  
 
+### byte[] string 상호변환
+
+source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
+
 ### 실시간 시간 받아오기
 ```
 long time = System.currentTimeMillis();
