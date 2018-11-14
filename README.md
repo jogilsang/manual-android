@@ -59,6 +59,9 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
+### 전환 프레임워크, transition framework
+https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220412381797&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+
 ### 문자열
 ```
 - 문자열 자르기, 특정 문자 기준으로 가져가기
