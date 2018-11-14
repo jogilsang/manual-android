@@ -341,6 +341,9 @@ http://mainia.tistory.com/4884
 ```
 
 ### 녹음,레코드(record) 권한 퍼미션
+source :  
+https://www.simplifiedcoding.net/audio-recording-android-example/
+
 ```
     <!--Required Permissions-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
