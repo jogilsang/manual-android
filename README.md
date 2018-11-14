@@ -2,6 +2,9 @@
 android for me
 
 ### Reference
+simplifiedcoding  
+https://www.simplifiedcoding.net  
+
 안드로이드 Q&A  
 http://www.masterqna.com/android/
 
