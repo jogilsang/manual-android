@@ -340,6 +340,14 @@ startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
 http://mainia.tistory.com/4884
 ```
 
+### 녹음,레코드(record) 권한 퍼미션
+```
+    <!--Required Permissions-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
+
 ### 주소록에서 번호 pick하기
 ```
 1. 버튼등 OnClickListener등에 넣어 ﻿연락처 선택 화면이 나오게 합니다.
