@@ -285,6 +285,13 @@ https://uigradients.com/#FacebookMessenger
 </shape>
 ```
 
+### 리사이클러뷰 RecyclerView 마지막,최하단 움직이기
+```
+recyclerview의 scrollToPosition 를 이용하여 이동 
+mPingListAtapter.add(PingContent.createItem(mIndex++, (String) data)); 
+mPingList.scrollToPosition(mPingListAtapter.getItemCount() - 1);
+```
+
 ### 위치정보 가져오기
 ```
 Geocoder 설명 
