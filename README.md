@@ -107,6 +107,14 @@ System.out.println(a);
 //결과값 : 무궁화 삼천리 화려강산 민국사람 민국으로 길이 보전하세
 ```
 
+### EditText 키보드 내리기,창내리기
+```
+InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
+
+출처: http://itpangpang.xyz/304 [ITPangPang]
+```
+
 ### 문자열 리소스
 ```
 & : &amp;
