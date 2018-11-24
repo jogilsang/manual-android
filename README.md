@@ -146,6 +146,38 @@ android:focusable="true"
 출처: http://gogorchg.tistory.com/entry/Android-EditText-자동-포커스-제거 [항상 초심으로]
 ```
 
+### BottomNavtionView 위아래줄, 밑줄
+```
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@drawable/my_background_bottom_layer"
+        app:itemIconTint="@color/color_main"
+        app:itemTextColor="@color/gray"
+        app:menu="@menu/bottom_navigation"
+        app:layout_insetEdge="bottom"
+        app:elevation="8dp"
+        />
+```
+
+my_background_bottom_layer  
+```
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#d7d7d7" />
+        </shape>
+    </item>
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>
+```
+
 ### 플로팅액션버튼 floatingactionbutton
 ```
                                 <android.support.design.widget.FloatingActionButton
