@@ -60,6 +60,18 @@ source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%
 
 ### 실시간 시간 받아오기
 ```
+// 한국 시간 TimeZone time
+Date date = new Date();
+DateFormat df = new SimpleDateFormat(
+    "yyyy-MM-dd HH:mm:ss");
+TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+df.setTimeZone(time);
+String str = df.format(date);
+
+//출처: http://mainia.tistory.com/2246 [녹두장군 - 상상을 현실로]
+```
+
+```
 long time = System.currentTimeMillis();
 SimpleDateFormat dayTime = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 String str = dayTime.format(new Date(time));
