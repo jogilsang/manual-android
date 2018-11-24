@@ -262,6 +262,11 @@ http://apis.map.daum.net/android/guide/
 변환 사이트 :  
 http://inloop.github.io/svg2android/
 
+### 나인패치 작업하기
+
+3번쨰 파일 색깔 체워서 각각 수정하고,
+에러뜰수있음. 나인패치에러고 다시 
+
 ### gradient (그래디언트)
 앵글별 정리 :
 https://blog.naver.com/jogilsang/221393957129
