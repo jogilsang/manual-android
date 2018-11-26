@@ -198,6 +198,47 @@ my_background_bottom_layer
 </layer-list>
 ```
 
+### recoding, file, uri로 삭제하기
+```
+                    AlertDialog.Builder alert_confirm = new AlertDialog.Builder(context);
+                    alert_confirm.setMessage("녹음파일을 삭제하시겠습니까?").setCancelable(false).setPositiveButton("확인",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // 'YES'
+
+                                    int position = getAdapterPosition();
+                                    Recording recording = recordingArrayList.get(position);
+
+                                    Uri uri = Uri.parse(recording.getUri());
+                                    File file = new File(uri.getPath());
+
+                                    if( file.exists() ){
+                                        if(file.delete()){
+                                            System.out.println("파일삭제 성공");
+                                            recordingArrayList.remove(position);
+                                        }else{
+                                            System.out.println("파일삭제 실패");
+                                        }
+                                    }else{
+                                        System.out.println("파일이 존재하지 않습니다.");
+                                    }
+
+                                    notifyItemChanged(position);
+                                    notifyDataSetChanged();
+
+                                }
+                            }).setNegativeButton("취소",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // 'No'
+                                    return;
+                                }
+                            });
+                    AlertDialog alert = alert_confirm.create();
+                    alert.show();
+```
 ### 플로팅액션버튼 floatingactionbutton
 ```
                                 <android.support.design.widget.FloatingActionButton
