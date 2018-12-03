@@ -78,6 +78,61 @@ ctrl + w : 단락선택
 
 출처: http://recipes4dev.tistory.com/133 [개발자를 위한 레시피]
 ```
+### 텍스트뷰, 이미지뷰 위에 글씨 
+```
+                    <TextView
+                        android:id="@+id/relay_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/ic_comment_white"
+                        android:padding="5dp"
+                        android:text="@string/relay_button_2"
+                        android:textColor="@color/white"
+                        tools:text="Comment" />
+```
+
+### 스피너, spinner, 텍스트선택리스트
+```
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                tv.setText("position : " + position +
+                        parent.getItemAtPosition(position));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/city"/>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city">
+        <item >서울</item>
+        <item >경기</item>
+        <item >부천</item>
+        <item >수원</item>
+        <item >파주</item>
+        <item >부산</item>
+        <item >대전</item>
+    </string-array>
+</resources>
+
+
+출처: http://bitsoul.tistory.com/43 [Happy Programmer~]
+
+http://bitsoul.tistory.com/43
+
+```
+
 ### RSA 암호화 복호화
 
 source :   
