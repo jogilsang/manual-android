@@ -156,6 +156,26 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
 
 ```
 
+### 안드로이드 백버튼,뒤로가기, 홈버튼
+```
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ic_back_main));
+```
+```
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int i = item.getItemId();
+
+        if(i == android.R.id.home) {
+            onBackPressed();
+            overridePendingTransition(0,0); //if Activitiy conversioned, no animation
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+```
 ### 색깔 소스
 getResources().getColor(R.color.white)  
 
