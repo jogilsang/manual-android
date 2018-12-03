@@ -54,6 +54,40 @@ ctrl + w : 단락선택
 source :   
 http://nine01223.tistory.com/101  
 
+### border, 테두리, 경계선, 줄
+```
+border.xml
+<?xml version="1.0" encoding="utf-8"?>
+
+ <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+	<item> 
+
+	    <shape android:shape="rectangle">
+
+	      <solid android:color="#d7d7d7" /> 
+
+	    </shape>
+
+	  </item>   
+
+	    <item android:top="1dp" android:bottom="1dp">  
+
+	     <shape android:shape="rectangle"> 
+
+	      <solid android:color="#ffffff" />
+
+	    </shape>
+
+	   </item>    
+
+
+
+ </layer-list> 
+출처: http://ellordnet.tistory.com/27 [IT in MT]
+```
 ### byte[] string 상호변환
 
 source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
