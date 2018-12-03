@@ -398,6 +398,50 @@ my_background_bottom_layer
                         btn1.setRippleColor(Color.BLUE);  
 			```
 
+### 날짜 선택, 글자클릭, 날짜 초이스, 데이트픽커
+```
+    private DatePickerDialog datePickerDialog;
+    DatePickerDialog.OnDateSetListener date;
+    final Calendar myCalendar = Calendar.getInstance();
+```
+
+```
+
+        date = new
+                DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                          int dayOfMonth) {
+                        // TODO Auto-generated method stub
+                        myCalendar.set(Calendar.YEAR, year);
+                        myCalendar.set(Calendar.MONTH, monthOfYear);
+                        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                        String myFormat = "MM/dd/yy"; //In which you need put here
+                        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                        btnDateNext.setText(sdf.format(myCalendar.getTime()));
+                    }
+
+                };
+
+
+```
+
+```
+        btnDateNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new DatePickerDialog(ReservationActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+            }
+        });
+
+```
+
 ### 키해시
 https://developers.kakao.com/docs/android
 
