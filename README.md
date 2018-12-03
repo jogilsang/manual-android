@@ -49,6 +49,35 @@ ctrl + d : 한줄 자동 복사
 ctrl + y : 한줄 자동 삭제  
 ctrl + w : 단락선택
 
+### 체크박스, 체크,checkbox
+```
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:id="@+id/check1"/>
+
+
+출처: http://recipes4dev.tistory.com/133 [개발자를 위한 레시피]
+```
+
+체크 박스 클릭 이벤트 함수에서 선택 상태 알아내기.  
+```
+    CheckBox checkBox = (CheckBox) findViewById(R.id.check1) ;
+    checkBox.setOnClickListener(new CheckBox.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (((CheckBox)v).isChecked()) {
+                // TODO : CheckBox is checked.
+            } else {
+                // TODO : CheckBox is unchecked.
+            }
+        }
+    }) ;
+
+
+출처: http://recipes4dev.tistory.com/133 [개발자를 위한 레시피]
+```
 ### RSA 암호화 복호화
 
 source :   
