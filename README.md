@@ -274,6 +274,41 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
 
 ```
 
+### 앱 종료하기
+```
+    public void actionExit() {
+
+        AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+        //dlg.setTitle("버튼 1개 대화상자"); // 제목
+        dlg.setMessage(getString(R.string.action_exit_question)); // 내용
+        //dlg.setIcon(R.drawable.ic_launcher); // 아이콘
+
+        dlg.setNegativeButton(getString(R.string.message_yes), new  DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // onClick 메소드 매개변수가 DialogInterface 여야하네.
+                //Toast.makeText(dlg.this, "good",0).show();
+
+
+                moveTaskToBack(true);
+                finish();
+
+                //출처: http://whose.tistory.com/443 [Whose Tistory?!]
+            }
+        });
+
+        dlg.setPositiveButton(getString(R.string.message_no), new  DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // onClick 메소드 매개변수가 DialogInterface 여야하네.
+                //Toast.makeText(this, "종료",0).show();
+
+            }
+        });
+
+        dlg.show(); // 보이다
+
+    }
+```
+
 ### 안드로이드 백버튼,뒤로가기, 홈버튼
 ```
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
