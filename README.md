@@ -1,6 +1,11 @@
 # manual-android
 android for me
 
+### 아이콘 만들기
+
+포토샵강좌 : http://blog.naver.com/PostView.nhn?blogId=godwings&logNo=220558432104&parentCategoryNo=&categoryNo=56&viewDate=&isShowPopularPosts=false&from=postView  
+사이트 : http://icon.angrymarmot.org/  
+
 ### Reference
 
 Index for Android Open Source Projects  
