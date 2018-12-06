@@ -325,6 +325,51 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
     }
 ```
 
+### 안드로이드 메뉴, 
+
+```
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+    // Inflate the menu, this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.main2, menu);
+    return true;
+}
+
+    public void setToolbar(){
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Main Page");
+        }
+
+        toolbar.setSubtitle("Test Subtitle");
+        toolbar.inflateMenu(R.menu.menu);
+    }
+    
+    <?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/menu_menu"
+        android:icon="@drawable/ic_menu"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        android:title="Setting" />
+
+</menu>
+
+```
+
 ### 안드로이드 백버튼,뒤로가기, 홈버튼
 ```
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
