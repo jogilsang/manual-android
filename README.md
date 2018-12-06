@@ -143,6 +143,17 @@ http://bitsoul.tistory.com/43
 source :   
 http://nine01223.tistory.com/101  
 
+### gradle default setting
+```
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:customtabs:27.1.1'
+    compile "com.android.support:animated-vector-drawable:27.1.1"
+    compile 'com.android.support:mediarouter-v7:27.1.1'
+    compile 'com.android.support:recyclerview-v7:27.1.1'
+    compile 'com.android.support:cardview-v7:27.1.1'
+    compile 'com.android.support:design:27.1.1'
+```
+
 ### border, 테두리, 경계선, 줄
 ```
 border.xml
