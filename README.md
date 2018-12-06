@@ -215,6 +215,67 @@ String str = dayTime.format(new Date(time));
 ### 전환 프레임워크, transition framework
 https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220412381797&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 
+### 웹뷰, nestedscrollview, 상단툴바, 사라짐, hide
+문제는 웹뷰 다른 영역 들어갔을때 height가 커지면, 그 공백만큼 다른 크기가 작은 웹뷰가 늘어남  
+```
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_main"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/net_error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:gravity="center"
+        android:text="접속이 원활하지 않습니다"
+        android:visibility="gone"
+        />
+
+    <!--android:fillViewport="true"-->
+    <!--android:nestedScrollingEnabled="false"-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--<WebView-->
+            <!--android:id="@+id/webview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+
+            <WebView
+                android:id="@+id/activity_main_webview"
+                android:fadingEdge="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            </WebView>
+
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
+```
+
 ### 문자열
 ```
 - 문자열 자르기, 특정 문자 기준으로 가져가기
