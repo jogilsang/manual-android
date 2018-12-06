@@ -314,6 +314,12 @@ System.out.println(a);
 //결과값 : 무궁화 삼천리 화려강산 민국사람 민국으로 길이 보전하세
 ```
 
+### 백터 vector 에러 안드로이드 minsdk 16
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+
+
 ### EditText 키보드 내리기,창내리기
 ```
 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
