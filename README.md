@@ -392,6 +392,18 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
     }
 ```
 
+### 핑거푸시, pingerpush
+```
+1. 내꺼 github 다운받기
+2. projects - app - src - main - assets 
+#APP_KEY = 핑거푸시 App key
+#APP_SECRET = 핑거푸시 App Secret
+#GOOGLE_PROJECT_ID = FCM 발신자(Sender) ID, 포스트맨 넣었던거 넣으
+바꾸기
+3. build 후 핑거푸시 계정에 active 계정 1 뜨는지확인
+4. 푸시알림 해보기
+```
+
 ### 안드로이드 메뉴, 툴바
 ```
     @Override
