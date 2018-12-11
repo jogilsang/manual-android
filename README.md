@@ -354,7 +354,27 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
     }
 
 ```
+```
+    private void getPermission(){
 
+
+        //    <uses-permission android:name="android.permission.INTERNET" />
+        //    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        //    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        //    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        //    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+        ActivityCompat.requestPermissions(RemoteLifeActivity.this,
+                new String[]{Manifest.permission.INTERNET,
+                        Manifest.permission.ACCESS_NETWORK_STATE,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                },
+                1000);
+
+    }
+```
 ```
 
 ### 앱 종료하기
