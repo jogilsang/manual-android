@@ -54,6 +54,13 @@ ctrl + d : 한줄 자동 복사
 ctrl + y : 한줄 자동 삭제  
 ctrl + w : 단락선택
 
+### 액셀 읽기, 쓰기
+apache poi  
+project - open moduls - jxl 검색  
+
+### assets, 애셋 폴더만들기
+app 오른쪽 마우스 folder - assets  
+
 ### 체크박스, 체크,checkbox
 ```
     <CheckBox
