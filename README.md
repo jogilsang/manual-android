@@ -219,6 +219,89 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
+### 유튜브 인탠트 intent 실행  
+```
+Intent i = new Intent(Intent.ACTION_VIEW);
+i.setData(Uri.parse(SAMPLE_VIDEO_URL));
+i.setPackage("com.google.android.youtube"); // 어플리케이션 강제 설정.
+startActivity(i);
+```
+
+### 유튜브 api 실행
+0. jar파일다운 : https://developers.google.com/youtube/android/player/downloads/?hl=ko  
+1. 구글api에서 프로젝트 생성  
+2. 사용자 인증정보  
+3. 패키지이름과 sha1 key를 집어넣는다  
+4. 안드로이드 액티비티를 youtubebaseactivity로 상속받는다  
+```
+public class YoutubeActivity extends YouTubeBaseActivity {
+
+
+    YouTubePlayerView youtubeView;
+    Button button;
+    YouTubePlayer.OnInitializedListener listener;
+
+
+    @Override
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_youtube_2);
+
+
+        button = (Button) findViewById((R.id.youtubeButton));
+        youtubeView = (YouTubePlayerView) findViewById(R.id.youtubeView);
+        listener = new YouTubePlayer.OnInitializedListener() {
+
+            @Override
+
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+                // 비디오 아이디
+                youTubePlayer.loadVideo("bOzk0OLz0Jc");
+
+            }
+
+
+            @Override
+
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+
+            }
+
+        };
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+
+                // api 키 값
+                youtubeView.initialize(getString(R.string.google_api_key), listener);
+
+            }
+
+        });
+
+
+    }
+
+}
+```
+5. 
+```
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/youtubeView"
+        android:layout_alignParentTop="true" />
+```
+
 ### 전환 프레임워크, transition framework
 https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220412381797&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 
