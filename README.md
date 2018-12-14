@@ -406,6 +406,8 @@ a= a.replaceAll("대한", "민국");
 System.out.println(a);
 //결과값 : 무궁화 삼천리 화려강산 민국사람 민국으로 길이 보전하세
 ```
+### 화면회전, portrait, landscape, rotate, oncreate
+android:configChanges="keyboardHidden|orientation"  
 
 ### 백터 vector 에러 안드로이드 minsdk 16
 
