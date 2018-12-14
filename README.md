@@ -219,6 +219,9 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
+### 유튜브 예제코드  
+https://www.programcreek.com/java-api-examples/?class=com.google.android.youtube.player.YouTubePlayer&method=setFullscreenControlFlags  
+
 ### 유튜브 인탠트 intent 실행  
 ```
 Intent i = new Intent(Intent.ACTION_VIEW);
