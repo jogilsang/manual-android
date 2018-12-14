@@ -542,6 +542,9 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
 특정 상품 구매자 대상 공지
 ```
 
+### inputstream <-> filepath, 인풋스트림, 파일패스
+InputStream is = new FileInputStream(strDir);  
+
 ### 안드로이드 메뉴, 툴바
 ```
     @Override
