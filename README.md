@@ -90,6 +90,10 @@ app 오른쪽 마우스 folder - assets
 
 출처: http://recipes4dev.tistory.com/133 [개발자를 위한 레시피]
 ```
+
+### 안드로이드 색깔 칼라
+https://designguidelines.withgoogle.com/wearos/style/color.html#color-dark-color-palette-for-wear-os  
+
 ### 텍스트뷰, 이미지뷰 위에 글씨 
 ```
                     <TextView
