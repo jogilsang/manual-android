@@ -74,6 +74,10 @@ https://www.androidhive.info/2014/07/android-speech-to-text-tutorial/
 Android Text To Speech Tutorial :  
 https://www.androidhive.info/2012/01/android-text-to-speech-tutorial/
 
+Android Developers An introduction to Text-To-Speech in Android  
+23 September 2009 :  
+https://android-developers.googleblog.com/2009/09/introduction-to-text-to-speech-in.html  
+
 ### 체크박스, 체크,checkbox
 ```
     <CheckBox
