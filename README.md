@@ -74,9 +74,34 @@ https://www.androidhive.info/2014/07/android-speech-to-text-tutorial/
 Android Text To Speech Tutorial :  
 https://www.androidhive.info/2012/01/android-text-to-speech-tutorial/
 
+```
+        // TTS를 생성하고 OnInitListener로 초기화 한다.
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != ERROR) {
+                    // 언어를 선택한다.
+                    tts.setLanguage(Locale.KOREAN);
+                }
+            }
+        });
+
+        button02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // editText에 있는 문장을 읽는다.
+                tts.setPitch(2.0f);         // 음성 톤을 2.0배 올려준다.
+                tts.setSpeechRate(1.0f);    // 읽는 속도는 기본 설정
+                tts.speak(editText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+```
+
 Android Developers An introduction to Text-To-Speech in Android  
 23 September 2009 :  
 https://android-developers.googleblog.com/2009/09/introduction-to-text-to-speech-in.html  
+
 
 ### 체크박스, 체크,checkbox
 ```
