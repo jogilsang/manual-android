@@ -71,6 +71,9 @@ app 오른쪽 마우스 folder - assets
 Android Speech To Text Tutorial :  
 https://www.androidhive.info/2014/07/android-speech-to-text-tutorial/  
 
+Android Text To Speech Tutorial :  
+https://www.androidhive.info/2012/01/android-text-to-speech-tutorial/
+
 ### 체크박스, 체크,checkbox
 ```
     <CheckBox
