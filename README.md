@@ -65,6 +65,11 @@ app 오른쪽 마우스 folder - assets
  - TextAppearance.Small  : 14
  - TextAppearance.Medium : 18
  - TextAppearance.Large  : 22
+ 
+### 안드로이드 텍스트 -> 스피치 
+
+Android Speech To Text Tutorial :  
+https://www.androidhive.info/2014/07/android-speech-to-text-tutorial/  
 
 ### 체크박스, 체크,checkbox
 ```
