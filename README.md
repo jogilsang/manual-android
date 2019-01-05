@@ -61,6 +61,9 @@ project - open moduls - jxl 검색
 ### assets, 애셋 폴더만들기
 app 오른쪽 마우스 folder - assets  
 
+### 초기저장, 시작, 스플레시, intro, splash  
+SharedPreferences  
+
 ### 텍스트 사이즈
  - TextAppearance.Small  : 14
  - TextAppearance.Medium : 18
