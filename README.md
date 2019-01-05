@@ -351,6 +351,14 @@ public class YoutubeActivity extends YouTubeBaseActivity {
         android:layout_alignParentTop="true" />
 ```
 
+### NoSQL
+
+Firebase Query NoSQL :   
+https://www.youtube.com/watch?v=WacqhiI-g_o  
+
+useful :  
+https://firebase.googleblog.com/2013/10/queries-part-1-common-sql-queries.html?   utm_campaign=Firebase_featureoverview_education_database_en_11-18-16&utm_source=Firebase&utm_medium=yt-desc  
+
 ### 전환 프레임워크, transition framework
 https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220412381797&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 
