@@ -248,6 +248,26 @@ border.xml
 
 source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
 
+### 안드로이드 키 key MD5 ,SHA1, SHA256 
+```
+md1, sha1,sha256 :
+keytool -list -v -keystore c:\users\user\.android\debug.keystore
+
+java bin :
+C:\Program Files\Java\jdk1.8.0_121\bin
+
+facebook : (default)
+keytool - exportcert - alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+
+facebook : (complete)
+c:\users\user\.android\debug.keystore
+keytool -exportcert -alias androiddebugkey -keystore c:\Users\user\.android\debug.keystore | C:\OpenSSL-Win64\bin\openssl sha1 -binary | C:\OpenSSL-Win64\bin\openssl base64
+
+openSSL down link : http://slproweb.com/products/Win32OpenSSL.html
+
+C:\openssl-0.9.8k_X64\bin\openssl
+```
+
 ### 실시간 시간 받아오기
 ```
 // 한국 시간 TimeZone time
