@@ -967,7 +967,8 @@ mPingList.scrollToPosition(mPingListAtapter.getItemCount() - 1);
 Geocoder 설명 
 https://m.blog.naver.com/PostView.nhn?blogId=trylsj&logNo=220708881021&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F#
 
-위도,경도 예제( 퍼미션 코드 따로넣어야함 )
+위도,경도 예제( 
+코드 따로넣어야함 )
 http://bitsoul.tistory.com/135
 
 getContryname() : 국가명  
@@ -1067,7 +1068,7 @@ startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tel)));
 http://mainia.tistory.com/4884
 ```
 
-### 녹음,레코드(record) 권한 퍼미션
+### 퍼미션 권한(Permission)
 source :  
 https://www.simplifiedcoding.net/audio-recording-android-example/
 
@@ -1075,7 +1076,11 @@ https://www.simplifiedcoding.net/audio-recording-android-example/
     <!--Required Permissions-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    // 녹음 레코드
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    // 절전 모드
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 ```
 
 ### 주소록에서 번호 pick하기
