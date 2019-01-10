@@ -6,6 +6,9 @@ android for me
 포토샵강좌 : http://blog.naver.com/PostView.nhn?blogId=godwings&logNo=220558432104&parentCategoryNo=&categoryNo=56&viewDate=&isShowPopularPosts=false&from=postView  
 사이트 : http://icon.angrymarmot.org/  
 
+### 와이파이 wifi 체크 변경 권한
+http://kylblog.tistory.com/43  
+
 ### Reference
 
 Index for Android Open Source Projects  
