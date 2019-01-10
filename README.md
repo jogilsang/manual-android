@@ -249,6 +249,7 @@ border.xml
 source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
 
 ### 안드로이드 키 key MD5 ,SHA1, SHA256 
+디버그(debug) password : android , 릴리즈(Release) password : 본인이 설정한 패스워드  
 ```
 md1, sha1,sha256 :
 keytool -list -v -keystore c:\users\user\.android\debug.keystore
