@@ -153,6 +153,18 @@ https://designguidelines.withgoogle.com/wearos/style/color.html#color-dark-color
                         tools:text="Comment" />
 ```
 
+### 타임 피커(Time picker) 시간 선택 시계 
+모양이 달라짐  
+
+출처 : https://www.tutlane.com/tutorial/android/android-timepicker-with-examples  
+```
+ <TimePicker
+    android:id="@+id/datePicker1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:timePickerMode="spinner"/>
+```
+
 ### 스피너, spinner, 텍스트선택리스트
 ```
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
