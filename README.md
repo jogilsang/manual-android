@@ -248,6 +248,21 @@ border.xml
 
 source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
 
+
+### 안드로이드 receiver
+
+원본코드 : 
+http://sh-itstory.tistory.com/64
+
+액티비티 띄우는 코드 : 
+http://yenos.tistory.com/entry/Alarm-Intent-Receiver%EC%97%90%EC%84%9C-Intent%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EC%95%8C%EB%9E%8C-%ED%99%94%EB%A9%B4-%EB%9D%84%EC%9A%B0%EA%B8%B0
+
+### 안드로이드 절전모드 해제, 화면 꺼진 상태에서도 실행
+
+wakelock : 
+출처: http://cofs.tistory.com/173 [CofS]
+
+
 ### 안드로이드 키 key MD5 ,SHA1, SHA256 
 디버그(debug) password : android , 릴리즈(Release) password : 본인이 설정한 패스워드  
 ```
