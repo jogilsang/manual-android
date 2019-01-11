@@ -9,6 +9,9 @@ android for me
 ### 와이파이 wifi 체크 변경 권한
 http://kylblog.tistory.com/43  
 
+### 화면 세로 전환 코드 portrait code  
+setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  
+
 ### 잠금화면에서도 액티비티 화면 볼수있는법
 액티비티 시작부분에 아래 코드를 집어넣는다  
 ```
