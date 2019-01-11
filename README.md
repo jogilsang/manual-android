@@ -9,6 +9,16 @@ android for me
 ### 와이파이 wifi 체크 변경 권한
 http://kylblog.tistory.com/43  
 
+### 잠금화면에서도 액티비티 화면 볼수있는법
+액티비티 시작부분에 아래 코드를 집어넣는다  
+```
+        // 잠금화면 위에서도 사용할수있게
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+                | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+                | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+                | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+```
+
 ### Reference
 
 Index for Android Open Source Projects  
@@ -265,6 +275,29 @@ source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%
 
 
 ### 안드로이드 알람 리시버 alarm receiver
+```
+        <receiver android:name="app.ideansoft.com.mdjplayer.receiver.Alarm_Receiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.sec" />
+            </intent-filter>
+        </receiver>
+```
+
+```
+        this.context = context;
+
+        // intent로부터 전달받은 string
+        String get_yout_string = intent.getExtras().getString("state");
+
+        // 작동할 액티비티를 설정한다
+        Intent alarmIntent = new Intent("android.intent.action.sec");
+        alarmIntent.setClass(context, DownloadActivity.class);
+        alarmIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        // 액티비티를 띄운다
+        this.context.startActivity(alarmIntent);
+```
+
 ```
 알람 리시버 원본코드 : 
 http://sh-itstory.tistory.com/64
