@@ -21,7 +21,22 @@ https://dwfox.tistory.com/79
 ```
 compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
 compile 'com.google.zxing:core:3.2.1'
+```
 
+```
+AZTEC
+CODE_128
+CODE_39
+CODE_93
+CODABAR
+DATA_MATRIX
+EAN_13
+EAN_8
+ITF
+PDF417
+QR_CODE
+UPC_A
+UPC_E
 ```
 
 ### 잠금화면에서도 액티비티 화면 볼수있는법
