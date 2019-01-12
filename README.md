@@ -12,6 +12,9 @@ http://kylblog.tistory.com/43
 ### 화면 세로 전환 코드 portrait code  
 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  
 
+### Zxing QR코드 바코드 인식 barcode
+http://iw90.tistory.com/276  
+
 ### 잠금화면에서도 액티비티 화면 볼수있는법
 액티비티 시작부분에 아래 코드를 집어넣는다  
 ```
