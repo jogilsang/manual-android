@@ -18,6 +18,13 @@ http://iw90.tistory.com/276
 
 new : 
 https://dwfox.tistory.com/79  
+
+original :  
+https://github.com/journeyapps/zxing-android-embedded/blob/master/README.md  
+
+sample code :  
+https://github.com/dolsanta/CustomZxingTest.git  
+
 ```
 compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
 compile 'com.google.zxing:core:3.2.1'
