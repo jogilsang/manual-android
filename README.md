@@ -12,6 +12,12 @@ http://kylblog.tistory.com/43
 ### 화면 세로 전환 코드 portrait code  
 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  
 
+### POI 액셀 xlsx excel
+
+STRING FOMULA ...  
+source :  
+http://javaslave.tistory.com/78  
+
 ### Zxing QR코드 바코드 인식 barcode
 old: 
 http://iw90.tistory.com/276   
