@@ -312,6 +312,12 @@ source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%
 
 
 ### 안드로이드 알람 리시버 alarm receiver
+
+```
+버전별로 다름...
+http://citynetc.tistory.com/149
+```
+
 ```
         <receiver android:name="app.ideansoft.com.mdjplayer.receiver.Alarm_Receiver" >
             <intent-filter>
