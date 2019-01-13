@@ -13,6 +13,8 @@ http://kylblog.tistory.com/43
 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);  
 
 ### POI 액셀 xlsx excel
+버전 3.13 쓰자. 최신버전 쓰지말고..  
+https://archive.apache.org/dist/poi/release/bin/  
 
 STRING FOMULA ...  
 source :  
