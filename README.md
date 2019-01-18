@@ -1,6 +1,12 @@
 # manual-android
 android for me
 
+### 작업교훈
+1. 이미지파일이 debug 만들떄랑 release 만들떄랑 에러로 인식될 확률이 있음. 파일 확장자는 웬만하면 png고 이름변경으로 바꾸면안됨  
+   보내기전에 release 해보기  
+2. debug나 release로 파일줄때 내걸로 apk파일 옮겨서 해보기  
+3. 웹앱을 만들더라도 permission 항상 주의하자  
+
 ### 아이콘 만들기
 
 포토샵강좌 : http://blog.naver.com/PostView.nhn?blogId=godwings&logNo=220558432104&parentCategoryNo=&categoryNo=56&viewDate=&isShowPopularPosts=false&from=postView  
