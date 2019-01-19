@@ -7,6 +7,39 @@ android for me
 2. debug나 release로 파일줄때 내걸로 apk파일 옮겨서 해보기  
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 
+### recyclerview item 리사이클러뷰 라사이클뷰 아이템 크기 이미지뷰 크기 비율 
+```
+itemImage.setImageResource(R.drawable.img_20181208_1_005);
+
+<!-- A CardView that contains a TextView -->
+<RelativeLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            />
+
+        <TextView
+            android:layout_below="@id/item_image"
+            android:id="@+id/item_date"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            />
+
+
+</RelativeLayout>
+```
+
 ### 아이콘 만들기
 
 포토샵강좌 : http://blog.naver.com/PostView.nhn?blogId=godwings&logNo=220558432104&parentCategoryNo=&categoryNo=56&viewDate=&isShowPopularPosts=false&from=postView  
