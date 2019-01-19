@@ -7,6 +7,73 @@ android for me
 2. debug나 release로 파일줄때 내걸로 apk파일 옮겨서 해보기  
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 
+### collapsinglayout tablayout nestedscroll
+```
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            android:clipChildren="false"
+            app:titleEnabled="false">
+
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:minHeight="@dimen/common_row_height"
+                    android:paddingLeft="@dimen/common_margin_medium"
+                    android:paddingRight="@dimen/common_margin_medium"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"
+                    app:tabMode="scrollable" />
+
+            </LinearLayout>
+
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>
+```
+
 ### recyclerview item 리사이클러뷰 라사이클뷰 아이템 크기 이미지뷰 크기 비율 
 ```
 itemImage.setImageResource(R.drawable.img_20181208_1_005);
