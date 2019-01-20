@@ -7,6 +7,36 @@ android for me
 2. debug나 release로 파일줄때 내걸로 apk파일 옮겨서 해보기  
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 
+### raw file name list 러우 파일 이름 리스트
+```
+url:   
+http://naminsik.com/blog/3654  
+
+public int getRawResIdByName(String resName) {
+      String pkgName = this.getPackageName();
+      // Return 0 if not found.
+      int resID = this.getResources().getIdentifier(resName, "raw", pkgName);
+      Log.i("AndroidVideoView", "Res Name: " + resName + "==> Res ID = " + resID);
+      return resID;
+   }
+
+int id = getRawResIdByName('mytestmovie');  
+Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + id);  
+```
+미디어플레이어 설정 :  
+```
+private void initMediaPlayer() {
+    mediaPlayer = new MediaPlayer();
+    mediaPlayer = MediaPlayer.create(
+            MediaPlayActivity.this, R.raw.media);
+    stateMediaPlayer = STATE_NOTSTARTER;
+    txtState.setText("- 실행전 -");
+}
+
+
+출처: http://mainia.tistory.com/1581 [녹두장군 - 상상을 현실로]
+```
+
 ### collapsinglayout tablayout nestedscroll
 ```
 <android.support.design.widget.CoordinatorLayout
