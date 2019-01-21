@@ -9,8 +9,11 @@ android for me
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
 ### 웹뷰 플레이스토어 에러 File-based XSS Your app(s) are using a WebView that is vulnerable to file-based cross-site scripting  
+구글 관련내용 :  
+https://support.google.com/faqs/answer/7668153  
+
 src :  
-https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contains-a-file-based-xss-issue-javascript-enable  
+https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contains-a-file-based-xss-issue-javascript-enable    
 
 
 ### 스플레시 소리
