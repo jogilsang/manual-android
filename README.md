@@ -6,6 +6,15 @@ android for me
    보내기전에 release 해보기  
 2. debug나 release로 파일줄때 내걸로 apk파일 옮겨서 해보기  
 3. 웹앱을 만들더라도 permission 항상 주의하자  
+4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
+
+### 스플레시 소리
+서비스 만들어서 쓰기 :  
+https://stackoverflow.com/questions/21043059/play-background-sound-in-android-applications/21043243#21043243  
+
+그냥 쓰기 :  
+https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash-screen  
+
 
 ### raw file name list 러우 파일 이름 리스트
 ```
