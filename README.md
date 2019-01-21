@@ -8,6 +8,11 @@ android for me
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 웹뷰 플레이스토어 에러 File-based XSS Your app(s) are using a WebView that is vulnerable to file-based cross-site scripting  
+src :  
+https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contains-a-file-based-xss-issue-javascript-enable  
+
+
 ### 스플레시 소리
 서비스 만들어서 쓰기 :  
 https://stackoverflow.com/questions/21043059/play-background-sound-in-android-applications/21043243#21043243  
