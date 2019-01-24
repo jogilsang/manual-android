@@ -786,8 +786,41 @@ imm.hideSoftInputFromWindow(EditText.getWindowToken(), 0);
 ' : &apos;
 " : &quot;
 출처 : http://www.w3schools.com/html/html_entities.asp
-
+```
 ### 퍼미션 여러개
+
+퍼미션요청 코드 소스 :
+https://stackoverflow.com/questions/34342816/android-6-0-multiple-permissions
+
+```
+
+// The request code used in ActivityCompat.requestPermissions()
+// and returned in the Activity's onRequestPermissionsResult()
+int PERMISSION_ALL = 1; 
+String[] PERMISSIONS = {
+  android.Manifest.permission.READ_CONTACTS, 
+  android.Manifest.permission.WRITE_CONTACTS, 
+  android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 
+  android.Manifest.permission.READ_SMS, 
+  android.Manifest.permission.CAMERA
+};
+
+if(!hasPermissions(this, PERMISSIONS)){
+    ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+}
+
+public static boolean hasPermissions(Context context, String... permissions) {
+    if (context != null && permissions != null) {
+        for (String permission : permissions) {
+            if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+```
+
 
 ```
     /**
