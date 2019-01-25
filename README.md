@@ -56,6 +56,75 @@ private void initMediaPlayer() {
 출처: http://mainia.tistory.com/1581 [녹두장군 - 상상을 현실로]
 ```
 
+
+### firebase firestore example sample friend eat 파이어베이스 파이어스토어 예제 샘플 플렌들리 이트
+src :  
+https://codelabs.developers.google.com/codelabs/firestore-android/index.html#0  
+
+
+서브콜렉션  
+```
+1. 기존 콜렉션 문서의 ref에 collection("")을 만든다음, document()로 키값을 넣는다  
+2.  //transaction을 실행하고, 기존 ref의 값을 model로 받고, 새롭게 넣을려는 model을 연산해서  
+    final DocumentReference ratingRef = restaurantRef.collection("ratings").document();  
+    // 아래처럼 데이터를 받아온다.  
+    Restaurant restaurant = transaction.get(restaurantRef).toObject(Restaurant.class);  
+    // 아래처럼 트랜잭션을 적용한다  
+    transaction.set(restaurantRef, restaurant);, transaction.set(ratingRef, rating) 같은 방식으로 한다.  
+```
+    
+    
+규칙  
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+        // Restaurants:
+        //   - Authenticated user can read
+        //   - Authenticated user can create/update (for demo)
+        //   - Validate updates
+        //   - Deletes are not allowed
+    match /restaurants/{restaurantId} {
+      allow read, create: if request.auth != null;
+      allow update: if request.auth != null
+                    && request.resource.data.name == resource.data.name
+      allow delete: if false;
+      
+      // Ratings:
+      //   - Authenticated user can read
+      //   - Authenticated user can create if userId matches
+      //   - Deletes and updates are not allowed
+      match /ratings/{ratingId} {
+        allow read: if request.auth != null;
+        allow create: if request.auth != null
+                      && request.resource.data.userId == request.auth.uid;
+        allow update, delete: if false;
+        
+        }
+    }
+  }
+}
+```
+
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
+
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+```
+
 ### collapsinglayout tablayout nestedscroll
 ```
 <android.support.design.widget.CoordinatorLayout
