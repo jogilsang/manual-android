@@ -125,6 +125,10 @@ service cloud.firestore {
 }
 ```
 
+### android bluetooth 안드로이드 블루투스
+프로토콜 종류 :  
+https://dsnight.tistory.com/13  
+
 ### collapsinglayout tablayout nestedscroll
 ```
 <android.support.design.widget.CoordinatorLayout
