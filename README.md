@@ -1517,7 +1517,7 @@ http://gun0912.tistory.com/74
 ### Flavor 공식문서  
 https://developer.android.com/studio/build/build-variants
 
-### Log  
+### 로그 Log  
 
 ```
 Log.v(); // Verbose
