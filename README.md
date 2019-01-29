@@ -56,6 +56,11 @@ private void initMediaPlayer() {
 출처: http://mainia.tistory.com/1581 [녹두장군 - 상상을 현실로]
 ```
 
+### 안드로이드 postgreSQL  
+
+https://www.dev2qa.com/use-jdbc-to-connect-postgresql-database/  
+https://www.pgcon.org/2011/schedule/attachments/194_pgcon2011-pgdroid.pdf  
+
 
 ### firebase firestore example sample friend eat 파이어베이스 파이어스토어 예제 샘플 플렌들리 이트
 src :  
