@@ -25,6 +25,25 @@ https://stackoverflow.com/questions/21043059/play-background-sound-in-android-ap
 그냥 쓰기 :  
 https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash-screen  
 
+### 안드로이드 파이어스토어 타임스탬프 android firestore timestamp
+
+```
+           titleView.setText(notice.getTitle());
+
+            Timestamp timestamp = snapshot.getTimestamp("timestamp");
+            java.util.Date date = timestamp.toDate();
+
+            // 데이터 포맷
+            DateFormat df = new SimpleDateFormat(
+                    "yyyy년 MM월 dd일");
+            TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+            df.setTimeZone(time);
+            String str = df.format(date);
+
+            dateView.setText(str);
+            // dateView.setText(date.toString());
+```
+
 
 ### raw file name list 러우 파일 이름 리스트
 ```
