@@ -647,6 +647,18 @@ String str = dayTime.format(new Date(time));
 //: http://ra2kstar.tistory.com/123 [초보개발자 이야기.]
 ```
 
+### 유튜브 썸네일 youtube thumbnail
+https://img.youtube.com/vi/nVCubhQ454c/0.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/1.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/2.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/3.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/maxresdefault.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/sddefault.jpg  
+https://img.youtube.com/vi/nVCubhQ454c/hqdefault.jpg  
+출처: https://webdir.tistory.com/472 [WEBDIR]  
+
+https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailLoader  
+
 ### 유튜브 예제코드  
 https://www.programcreek.com/java-api-examples/?class=com.google.android.youtube.player.YouTubePlayer&method=setFullscreenControlFlags  
 
