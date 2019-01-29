@@ -654,7 +654,7 @@ startActivity(i);
 ```
 
 ### 유튜브 api 실행
-0. jar파일다운 : https://developers.google.com/youtube/android/player/downloads/?hl=ko  
+0. jar파일다운 : https://developers.google.com/youtube/android/player/downloads/?hl=ko  (app/libs 폴더만들고)
 1. 구글api에서 프로젝트 생성  
 2. 사용자 인증정보  
 3. 패키지이름과 sha1 key를 집어넣는다  
