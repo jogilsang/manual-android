@@ -20,7 +20,11 @@ src :
 https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contains-a-file-based-xss-issue-javascript-enable    
 
 xml network_security_config 추가하기  :  
-https://developer.android.com/training/articles/security-config  
+https://developer.android.com/training/articles/security-config 
+
+### 스트리밍  
+  
+rtmp  
 
 ### 스플레시 소리
 서비스 만들어서 쓰기 :  
