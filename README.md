@@ -46,6 +46,9 @@ https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    
+    android:theme="@android:style/Theme.NoTitleBar">
+    
 ```
 
 ### 안드로이드 글라이드 glide
