@@ -35,7 +35,18 @@ https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash
         customer.setUserId(customers.document().getId());
 ```
 
-### 
+### 상태바 없애기
+```
+      getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+```
+### 타이틀바 없애기
+```
+    <style name="apptheme_noactionbar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+```
 
 ### 안드로이드 글라이드 glide
 인터넷 이미지  
