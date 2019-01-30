@@ -25,6 +25,12 @@ https://stackoverflow.com/questions/21043059/play-background-sound-in-android-ap
 그냥 쓰기 :  
 https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash-screen  
 
+### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
+```
+        CollectionReference customers = mFirestore.collection("customers");
+        customer.setUserId(customers.document().getId());
+```
+
 ### 안드로이드 파이어스토어 타임스탬프 android firestore timestamp
 
 ```
