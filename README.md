@@ -8,6 +8,10 @@ android for me
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 아이콘 icon
+
+https://www.flaticon.com/search?word=rank  
+
 ### 웹뷰 플레이스토어 에러 File-based XSS Your app(s) are using a WebView that is vulnerable to file-based cross-site scripting  
 구글 관련내용 :  
 https://support.google.com/faqs/answer/7668153  
@@ -29,6 +33,25 @@ https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash
 ```
         CollectionReference customers = mFirestore.collection("customers");
         customer.setUserId(customers.document().getId());
+```
+
+### 
+
+### 안드로이드 글라이드 glide
+인터넷 이미지  
+```
+            // Load image
+            // Glide.with(imageView.getContext())
+            //         .load(restaurant.getPhoto())
+            //         .into(imageView);
+ ```
+ 
+로컬 이미지  
+```
+             // 신궁
+             Glide.with(rankImageView.getContext())
+                     .load(context.getResources().getDrawable(R.drawable.chevron_11))
+                     .into(rankImageView);
 ```
 
 ### 안드로이드 파이어스토어 타임스탬프 android firestore timestamp
