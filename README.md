@@ -23,9 +23,12 @@ xml network_security_config 추가하기  :
 https://developer.android.com/training/articles/security-config 
 
 ### 안드로이드 애니메이션 로테이션 android rotation animation  
-1. res - anim 폴더를 만든다
-2. anim 폴더안에 xml 파일을 만든다.
-3. 
+이미지파일 자체를 로테이션 하는 소스 :  
+https://mainia.tistory.com/2613  
+
+1. res - anim 폴더를 만든다  
+2. anim 폴더안에 xml 파일을 만든다.  
+3.  
 ```
 	Animation anim = AnimationUtils.loadAnimation(
 		getApplicationContext(), // 현재 화면의 제어권자
@@ -33,9 +36,9 @@ https://developer.android.com/training/articles/security-config
 	imageView.startAnimation(anim);
 ```
 
-로테이션 소스 :  
-https://bitsoul.tistory.com/89?category=623707
-https://maenan.tistory.com/18
+로테이션 소스 :    
+https://bitsoul.tistory.com/89?category=623707  
+https://maenan.tistory.com/18  
 
 ### custom 커스텀 seekbar 시크바
 ```
