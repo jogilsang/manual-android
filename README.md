@@ -22,6 +22,50 @@ https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contai
 xml network_security_config 추가하기  :  
 https://developer.android.com/training/articles/security-config 
 
+### custom 커스텀 seekbar 시크바
+```
+        <SeekBar
+            android:id="@+id/seekbar_stick_2"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:thumb="@drawable/thumb_stick"
+            android:progress="50"
+            android:background="@drawable/bar_stick_horizontal"
+            android:progressDrawable="@null"
+            android:rotation="270"
+            />
+```
+
+```
+   // thumb 크기를 bar 크기에 맞추기
+    public static void setSeekberThumb(final SeekBar seekBar, final Resources res) {
+        seekBar.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+
+                if (seekBar.getHeight() > 0) {
+                    Drawable thumb = res.getDrawable(R.drawable.thumb_stick);
+                    int h = seekBar.getMeasuredHeight();
+                    int w = h;
+                    Bitmap bmpOrg = ((BitmapDrawable) thumb).getBitmap();
+                    Bitmap bmpScaled = Bitmap.createScaledBitmap(bmpOrg, w, h, true);
+                    Drawable newThumb = new BitmapDrawable(res, bmpScaled);
+                    newThumb.setBounds(0, 0, newThumb.getIntrinsicWidth(), newThumb.getIntrinsicHeight());
+                    seekBar.setThumb(newThumb);
+                    seekBar.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                return true;
+            }
+        });
+    }
+```
+
+thumb 크기를 맞춰주기 : 
+https://dwfox.tistory.com/51  
+
+세로 :  
+https://github.com/h6ah4i/android-verticalseekbar  
+
 ### 스트리밍  
   
 rtmp  
