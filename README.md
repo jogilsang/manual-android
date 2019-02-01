@@ -26,6 +26,23 @@ https://developer.android.com/training/articles/security-config
 이미지파일 자체를 로테이션 하는 소스 :  
 https://mainia.tistory.com/2613  
 
+```
+    // 이미지 회전 함수
+    public Bitmap rotateImage(Bitmap src, float degree) {
+         
+        // Matrix 객체 생성
+        Matrix matrix = new Matrix();
+        // 회전 각도 셋팅
+        matrix.postRotate(degree);
+        // 이미지와 Matrix 를 셋팅해서 Bitmap 객체 생성
+        return Bitmap.createBitmap(src, 0, 0, src.getWidth(),
+                src.getHeight(), matrix, true);
+    }
+
+
+출처: https://mainia.tistory.com/2613 [녹두장군 - 상상을 현실로]
+```
+
 1. res - anim 폴더를 만든다  
 2. anim 폴더안에 xml 파일을 만든다.  
 3.  
@@ -35,6 +52,8 @@ https://mainia.tistory.com/2613
 		R.anim.rotate_anim);    // 설정한 에니메이션 파일
 	imageView.startAnimation(anim);
 ```
+
+
 
 로테이션 소스 :    
 https://bitsoul.tistory.com/89?category=623707  
@@ -278,8 +297,11 @@ service cloud.firestore {
 ```
 
 ### android bluetooth 안드로이드 블루투스
-프로토콜 종류 :  
-https://dsnight.tistory.com/13  
+블루투스 코딩 :  
+https://yeolco.tistory.com/80  
+
+프로토콜 종류 :   
+https://dsnight.tistory.com/13   
 
 ### collapsinglayout tablayout nestedscroll
 ```
