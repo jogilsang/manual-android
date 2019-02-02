@@ -847,6 +847,10 @@ String str = dayTime.format(new Date(time));
 ```
 
 ### 유튜브 썸네일 youtube thumbnail
+유튜브 썸네일 뷰 코딩 :  
+https://stackoverflow.com/questions/25624454/viewpager-and-youtubeplayer  
+
+이미지 보는법 :  
 https://img.youtube.com/vi/nVCubhQ454c/0.jpg  
 https://img.youtube.com/vi/nVCubhQ454c/1.jpg  
 https://img.youtube.com/vi/nVCubhQ454c/2.jpg  
