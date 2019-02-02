@@ -23,6 +23,15 @@ https://www.flaticon.com/search?word=rank
     implementation 'com.squareup.okhttp:okhttp:2.0.0'
     implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
 ```
+```
+    @Override
+    public void onDestroy() {
+        sliderShow.stopAutoCycle();
+        super.onDestroy();
+    }
+
+```
+
 오픈소스 :   
 https://github.com/daimajia/AndroidImageSlider  
 
