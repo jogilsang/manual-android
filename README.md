@@ -13,6 +13,16 @@ android for me
 https://www.flaticon.com/search?word=rank  
 
 ### 안드로이드 슬라이더 android slider  
+```
+    // image slider
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.okhttp:okhttp:2.0.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+```
 오픈소스 :   
 https://github.com/daimajia/AndroidImageSlider  
 
