@@ -16,6 +16,13 @@ https://www.flaticon.com/search?word=rank
 오픈소스 :   
 https://github.com/daimajia/AndroidImageSlider  
 
+사용법 : 
+https://github.com/daimajia/AndroidImageSlider  
+https://github.com/daimajia/AndroidImageSlider/wiki/Start-Using  
+
+코드 :  
+https://github.com/daimajia/AndroidImageSlider/tree/master/demo/src/main/java/com/daimajia/slider/demo  
+
 ### 웹뷰 플레이스토어 에러 File-based XSS Your app(s) are using a WebView that is vulnerable to file-based cross-site scripting  
 구글 관련내용 :  
 https://support.google.com/faqs/answer/7668153  
