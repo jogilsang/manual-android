@@ -12,6 +12,10 @@ android for me
 
 https://www.flaticon.com/search?word=rank  
 
+### 안드로이드 슬라이더 android slider  
+오픈소스 :   
+https://github.com/daimajia/AndroidImageSlider  
+
 ### 웹뷰 플레이스토어 에러 File-based XSS Your app(s) are using a WebView that is vulnerable to file-based cross-site scripting  
 구글 관련내용 :  
 https://support.google.com/faqs/answer/7668153  
