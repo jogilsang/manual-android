@@ -147,6 +147,8 @@ https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash
 ### 안드로이드 파이어스토어 쿼리 android firestore query
 문서가 추가되거나 삭제되어야만 갱신됨. 문서 필드값 수정한다고 바뀌지않음.
 프래그먼트 뷰페이저 내에서 다시 왔다갔다해버리면, queryDocumentSnapshots이 0이되어버림
+그러므로 viewpager 로 가서 destroyItem을 없애버려서 oncreate를 다시 안하게하면됨...
+문서와 마찬가지로 get() 대신 onSnapshot()을 사용하여 쿼리 결과를 수신 대기할 수 있습니다.
 
 addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>()
 
@@ -190,6 +192,74 @@ document key 얻기
                 }
            }
        });
+```
+
+최근 5개 항목 쿼리하기 (addSnapshotListener 사용)
+- queryDocumentSnapshots.getDocuments().size() == 0 일떄 아무것도 안하는게 중요...
+- onCreate 반복되면 값을 못받음. 위에 쿼리랑 관련 있는거같기도하고...위에 쿼리를 addSuccessListenr로 
+```
+               mQuery_3_Listener = mQuery_3.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                        // 쿼리 값은 무조건 하나여야한다.
+                        if( e != null) {
+                            e.printStackTrace();
+                            Log.d(TAG, " e != null");
+                            mQueryResult_3 = "error";
+                            maxPointQuery5View.setText(mQueryResult_3);
+                            return;
+                        }
+
+                        if(queryDocumentSnapshots.getDocuments().size() == 0) {
+                            //maxPointQuery5View.setText("사이즈가...0?");
+                        }
+                        else {
+
+                            mQueryResult_3 = "";
+
+                            // 모든 포인트를 구한다
+                            for(DocumentSnapshot documentSnapshot1 : queryDocumentSnapshots) {
+
+                                Log.d(TAG, " //모든 포인트를 구한다 안에까지 진입");
+
+                                Point point = documentSnapshot1.toObject(Point.class);
+                                mQueryResult_3 = mQueryResult_3 + " " + String.valueOf(point.getPoint());
+
+                            }
+
+                            maxPointQuery5View.setText(mQueryResult_3);
+
+                        }
+
+                    }
+                });
+
+```
+
+최근 5개항목 쿼리하기(addOnCompleteListener 사용하기)
+- 문서 필드 변경시 업데이트가 안되는듯...?
+- 사용할순 있는대 하자는 있는느낌. viewpager ondestroy 안해도 
+```
+//                mPointsRef.orderBy("point", Query.Direction.DESCENDING).limit(5).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//
+//                                Point point = document.toObject(Point.class);
+//                                mQueryResult_3 = mQueryResult_3 + " " + String.valueOf(point.getPoint());
+//                                Log.d(TAG, document.getId() + " => " + document.getData());
+//                            }
+//                        } else {
+//                            Log.d(TAG, "Error getting documents: ", task.getException());
+//                        }
+//
+//                        maxPointQuery5View.setText(mQueryResult_3);
+//
+//                    }
+//                });
 ```
 
 ### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
