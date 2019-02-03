@@ -144,6 +144,31 @@ https://stackoverflow.com/questions/21043059/play-background-sound-in-android-ap
 그냥 쓰기 :  
 https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash-screen  
 
+### 안드로이드 파이어스토어 쿼리 android firestore query
+document key 얻기
+예시 : customers 콜렉션에서 userId 값을 갖는 document의 key값을 
+```
+        mQuery = mFirestore.collection("customers").whereEqualTo("userId", uid);
+        
+        mQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+
+                if( e != null) {
+                    e.printStackTrace();
+                    return;
+                }
+
+                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()) {
+                    mQueryResult = mQueryResult + documentSnapshot.getId();
+                }
+
+                documentID.setText(mQueryResult);
+
+            }
+        });
+```
+
 ### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
 ```
         CollectionReference customers = mFirestore.collection("customers");
