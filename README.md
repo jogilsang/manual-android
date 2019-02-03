@@ -52,6 +52,11 @@ https://stackoverflow.com/questions/50791306/google-play-warning-your-app-contai
 xml network_security_config 추가하기  :  
 https://developer.android.com/training/articles/security-config 
 
+### 안드로이드 그래프 라이브러리 MPAndroidChart
+
+tip :  
+https://snowflake-1117.github.io/2017-09-17/%EC%9C%A0%EC%9A%A9%ED%95%9C-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C- %EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-MPAndroidChart
+
 ### 안드로이드 애니메이션 로테이션 android rotation animation  
 이미지파일 자체를 로테이션 하는 소스 :  
 https://mainia.tistory.com/2613  
