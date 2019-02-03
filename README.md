@@ -145,6 +145,12 @@ https://stackoverflow.com/questions/21043059/play-background-sound-in-android-ap
 https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash-screen  
 
 ### 안드로이드 파이어스토어 쿼리 android firestore query
+문서가 추가되거나 삭제되어야만 갱신됨. 문서 필드값 수정한다고 바뀌지않음.
+프래그먼트 뷰페이저 내에서 다시 왔다갔다해버리면, queryDocumentSnapshots이 0이되어버림
+
+addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>()
+
+
 document key 얻기  
 쿼리로 얻기 예시 : customers 콜렉션에서 userId 값을 갖는 document의 key값을 얻는다  
 ```
