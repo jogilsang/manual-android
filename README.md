@@ -12,6 +12,52 @@ android for me
 
 https://www.flaticon.com/search?word=rank  
 
+### 안드로이드 인텐트 값 전달 intent putextra
+
+데이터 전달  
+```
+    @Override
+    public void onItemSelected(DocumentSnapshot item) {
+
+        // Go to the details page for the selected restaurant
+         Intent intent = new Intent(mContext, NoticeActivity.class);
+
+         Notice notice = item.toObject(Notice.class);
+
+         intent.putExtra(NoticeActivity.VALUE_NOTICE_DATE, notice.getTimestampToString());
+         intent.putExtra(NoticeActivity.VALUE_NOTICE_TEXT, notice.getText());
+         intent.putExtra(NoticeActivity.VALUE_NOTICE_TITLE, notice.getTitle());
+
+         startActivity(intent);
+
+    }
+```
+데이터 받기
+```
+    public static final String VALUE_NOTICE_TEXT = "value_notice_text";
+    public static final String VALUE_NOTICE_DATE = "value_notice_date";
+    public static final String VALUE_NOTICE_TITLE = "value_notice_title";
+    
+            // 액티비티 가져오기
+        valueMaintext = getIntent().getExtras().getString(VALUE_NOTICE_TEXT);
+        if (valueMaintext == null) {
+            throw new IllegalArgumentException("Must pass extra " + VALUE_NOTICE_TEXT);
+        }
+
+        // Get restaurant ID from extras
+        valueDate = getIntent().getExtras().getString(VALUE_NOTICE_DATE);
+        if (valueDate == null) {
+            throw new IllegalArgumentException("Must pass extra " + VALUE_NOTICE_DATE);
+        }
+
+        // Get restaurant ID from extras
+        valueTitle = getIntent().getExtras().getString(VALUE_NOTICE_TITLE);
+        if (valueTitle == null) {
+            throw new IllegalArgumentException("Must pass extra " + VALUE_NOTICE_TITLE);
+        }
+    
+```
+
 ### 안드로이드 슬라이더 android slider  
 ```
     // image slider
