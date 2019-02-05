@@ -326,7 +326,7 @@ document key 얻기
 ```
 
 ### 안드로이드 파이어스토어 타임스탬프 android firestore timestamp
-
+설정법
 ```
            titleView.setText(notice.getTitle());
 
@@ -343,7 +343,42 @@ document key 얻기
             dateView.setText(str);
             // dateView.setText(date.toString());
 ```
+timestamp -> String 
+```
+        public String getTimestampToString(final Timestamp timestamp){
 
+            java.util.Date date = timestamp.toDate();
+
+            // 데이터 포맷
+            DateFormat df = new SimpleDateFormat(
+                    "yyyy년 MM월 dd일");
+            TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+            df.setTimeZone(time);
+            String str = df.format(date);
+
+            return str;
+
+        }
+```
+
+timestamp -> integer (되는지 모름)
+```
+    public int getTimestampToInt(final Timestamp timestamp){
+
+        java.util.Date date = timestamp.toDate();
+
+        // 데이터 포맷
+        DateFormat df = new SimpleDateFormat(
+                "yyyyMMdd");
+        TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+        df.setTimeZone(time);
+        String str = df.format(date);
+
+        int value = Integer.parseInt(str);
+
+        return value;
+    }
+```
 
 ### raw file name list 러우 파일 이름 리스트
 ```
