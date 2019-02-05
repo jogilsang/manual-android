@@ -622,6 +622,63 @@ UPC_E
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 ```
 
+### MPAndroidChart  
+
+// MPAndroidChart
+implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'  
+    
+```
+<com.github.mikephil.charting.charts.LineChart
+android:id="@+id/tab_4_chart_max_point_5"
+android:layout_below="@+id/tab_4_title_max_point_5"
+android:layout_width="match_parent"
+android:layout_height="300dp"
+android:layout_marginTop="15dp"
+android:layout_marginLeft="10dp"
+android:layout_marginRight="10dp"
+android:layout_marginBottom="20dp"
+/>
+```
+
+```
+    public void setLineChart(LineChart chart, QuerySnapshot queryDocumentSnapshots){
+
+//        // 리스트 선언
+//        List<Entry> entries = new ArrayList<Entry>();
+//
+//        // querysnapshot 받아오기
+//        for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+//
+//            // point model로 받기
+//            Point point = documentSnapshot.toObject(Point.class);
+//
+//            // model -> entri
+//            entries.add(new Entry(getTimestampToInt(documentSnapshot.getTimestamp("timestamp")), point.getPoint()));
+//
+//        }
+
+        ArrayList<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(20180120, 80));
+        entries.add(new Entry(20180121, 60));
+        entries.add(new Entry(20180122, 30));
+        entries.add(new Entry(20180123, 20));
+        entries.add(new Entry(20180124, 10));
+
+        LineDataSet dataset = new LineDataSet(entries, "label");
+        dataset.setColors(ColorTemplate.COLORFUL_COLORS); //
+
+        LineData data = new LineData(dataset);
+
+        /*dataset.setDrawCubic(true); //선 둥글게 만들기
+        dataset.setDrawFilled(true); //그래프 밑부분 색칠*/
+
+        chart.setData(data);
+        chart.animateY(5000);
+        chart.invalidate();
+
+    }
+```
+
 ### Reference
 
 Index for Android Open Source Projects  
