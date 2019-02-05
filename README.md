@@ -657,7 +657,73 @@ UPC_E
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 ```
 
-### MPAndroidChart  
+### EazeGraph chart
+https://github.com/blackfizz/EazeGraph  
+
+```
+    <org.eazegraph.lib.charts.ValueLineChart
+        android:id="@+id/tab_4_chart_max_point_5"
+        android:layout_below="@+id/tab_4_title_max_point_5"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+
+        app:egUseCubic="true"
+        app:egUseOverlapFill="true"
+        app:egCurveSmoothness="0.4"
+        app:egIndicatorLineColor="#FE6DA8"
+        app:egLegendHeight="40dp"
+        app:egShowStandardValue="true"/>
+```
+
+```
+   public void setValueLineChart(ValueLineChart chart, QuerySnapshot queryDocumentSnapshots){
+
+        // 시리즈
+        ValueLineSeries series = new ValueLineSeries();
+        series.setColor(0xFF56B7F1);
+        
+        // 리스트 선언
+        List<ValueLinePoint> entries = new ArrayList<ValueLinePoint>();
+
+        // querysnapshot 받아오기
+        for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+
+            // point model로 받기
+            Point point = documentSnapshot.toObject(Point.class);
+
+            // timestamp -> String 변환
+            Timestamp timestamp = documentSnapshot.getTimestamp("timestamp");
+
+            // model -> entri
+            series.addPoint(new ValueLinePoint(getTimestampToString(timestamp), (float)point.getPoint()));
+
+        }
+
+        chart.addSeries(series);
+        chart.startAnimation();
+
+        //        series.addPoint(new ValueLinePoint("Jan", 2.4f));
+        //        series.addPoint(new ValueLinePoint("Feb", 3.4f));
+        //        series.addPoint(new ValueLinePoint("Mar", .4f));
+        //        series.addPoint(new ValueLinePoint("Apr", 1.2f));
+        //        series.addPoint(new ValueLinePoint("Mai", 2.6f));
+        //        series.addPoint(new ValueLinePoint("Jun", 1.0f));
+        //        series.addPoint(new ValueLinePoint("Jul", 3.5f));
+        //        series.addPoint(new ValueLinePoint("Aug", 2.4f));
+        //        series.addPoint(new ValueLinePoint("Sep", 2.4f));
+        //        series.addPoint(new ValueLinePoint("Oct", 3.4f));
+        //        series.addPoint(new ValueLinePoint("Nov", .4f));
+        //        series.addPoint(new ValueLinePoint("Dec", 1.3f));
+
+    }
+```
+
+### MPAndroidChart graph
 
 // MPAndroidChart
 implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'  
@@ -726,7 +792,7 @@ https://www.simplifiedcoding.net
 http://www.masterqna.com/android/
 
 Android Cheatsheet for Graphic Designers :  
-http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/
+http://petrnohejl.github.io/Android-Cheatsheet-For-ic-Designers/
 
 Android sample for Developer :  
 https://developer.android.com/samples/
