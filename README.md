@@ -17,6 +17,14 @@ https://www.flaticon.com/search?word=rank
 modify :  
 ```
 
+   public void startListening(Query query, ListenerRegistration listenerRegistration, EventListener<QuerySnapshot> eventListener) {
+        // TODO(developer): Implement
+
+        if (query != null && listenerRegistration == null) {
+            listenerRegistration = query.addSnapshotListener(eventListener);
+        }
+    }
+
     public void stopListening(ListenerRegistration listenerRegistration) {
         
         if (listenerRegistration != null) {
@@ -24,6 +32,7 @@ modify :
             listenerRegistration = null;
         }
     }
+   
 
 ```
 
