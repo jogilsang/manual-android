@@ -12,6 +12,17 @@ android for me
 
 https://www.flaticon.com/search?word=rank  
 
+### 알림창 배경 alertBuilder background
+```
+<style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="android:background">@color/myColor</item>
+</style>
+
+AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialogTheme)
+        ...
+        .create();
+```
+
 ### 파이어베이스 firebase 리스닝 listening start stop
 
 modify :  
