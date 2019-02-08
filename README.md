@@ -58,6 +58,304 @@ https://www.flaticon.com/search?word=rank
     
 ```
 
+### 검색 서치뷰 SearchView
+
+public CutomAutoCompleteTextView editSearch;
+
+editSearch = (CutomAutoCompleteTextView) findViewById(R.id.editSearch);
+
+editSearch.setAdapter(adWord);
+
+```
+	    editSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+
+                // keypad 에서 enter 시행시 Listen하고 동작할 액션을 작성
+                String searchData = textView.getText().toString();
+
+		// 텍스트 내용이 비어있지않다면
+                if(searchData.isEmpty()){
+
+                    basicToast(getString(R.string.alarm_empty));
+                    editSearch.clearFocus();
+                    editSearch.setFocusable(false);
+                    editSearch.setFocusableInTouchMode(true);
+                    editSearch.setFocusable(true);
+
+                    posts.getView().setFocusableInTouchMode(true);
+                    posts.getView().requestFocus();
+
+                    return true;
+                }
+
+//                 switch (keyEvent.getAction()) {
+//
+//                     case KeyEvent.ACTION_DOWN:
+//
+//                         if (i == KeyEvent.KEYCODE_BACK) {
+//
+//                             editSearch.clearFocus();
+//                             editSearch.setFocusable(false);
+//                             editSearch.setText("");
+//                             editSearch.setFocusableInTouchMode(true);
+//                             editSearch.setFocusable(true);
+//                             return true;
+//
+//                         }
+//                         break;
+//                 }
+
+                switch (i) {
+
+
+                    case EditorInfo.IME_ACTION_SEARCH:
+
+                        switch(WHAT_IS_ACTIVITY){
+
+                            case SUBJECT_FRAGMENT :
+
+                            case RECENT_FRAGMENT :
+
+                            case MAIN_ACTIVITY :
+
+                                basicToast(searchData + getString(R.string.font_change_message));
+                                posts.queryGetText(searchData);
+
+                                break;
+
+                        }
+
+                        break;
+
+                    default:
+
+                        basicToast("it is activated in recents :)");
+
+                        // 기본 엔터키 동작
+                        return false;
+                }
+
+                // 내용 비우고 다시 이벤트 할수있게 선택
+                editSearch.clearFocus();
+                editSearch.setFocusable(false);
+                editSearch.setText("");
+                editSearch.setFocusableInTouchMode(true);
+                editSearch.setFocusable(true);
+
+                posts.getView().setFocusableInTouchMode(true);
+                posts.getView().requestFocus();
+
+                return true;
+                //출처: http://tiann.tistory.com/10 [티앤의 IT월드]
+            }
+        });
+
+```
+
+xml : 
+```
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorThird"
+        android:id="@+id/tab_3_layout_searchedit"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <include
+                layout="@layout/main_content_search_edit"
+                android:id="@+id/tab_3_searchedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:onClick="onToolbarIconClicked"
+                android:src="@drawable/ic_rotate"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+```
+
+customautocompleteTestView :  
+```
+package com.google.firebase.example.fireeats.view;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.widget.AppCompatAutoCompleteTextView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+
+import com.google.firebase.example.fireeats.R;
+
+
+/**
+ * Created by TedPark on 16. 4. 11..
+ */
+
+public class CutomAutoCompleteTextView extends AppCompatAutoCompleteTextView implements TextWatcher, View.OnTouchListener, View.OnFocusChangeListener {
+
+    private Drawable searchDrawable;
+    private Drawable clearDrawable;
+    private OnFocusChangeListener onFocusChangeListener;
+    private OnTouchListener onTouchListener;
+    private TextWatcher textWatcher;
+
+    public CutomAutoCompleteTextView(final Context context) {
+        super(context);
+        init();
+    }
+
+    public CutomAutoCompleteTextView(final Context context, final AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public CutomAutoCompleteTextView(final Context context, final AttributeSet attrs, final int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+
+    @Override
+    public void setOnFocusChangeListener(OnFocusChangeListener onFocusChangeListener) {
+        this.onFocusChangeListener = onFocusChangeListener;
+    }
+
+    @Override
+    public void setOnTouchListener(OnTouchListener onTouchListener) {
+        this.onTouchListener = onTouchListener;
+    }
+
+    @Override
+    public void addTextChangedListener(TextWatcher textWatcher) {
+        this.textWatcher = textWatcher;
+    }
+
+    private void init() {
+
+        Drawable tempDrawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_cancel_black_24dp);
+        clearDrawable = DrawableCompat.wrap(tempDrawable);
+        DrawableCompat.setTintList(clearDrawable,getHintTextColors());
+        clearDrawable.setBounds(0, 0, clearDrawable.getIntrinsicWidth(), clearDrawable.getIntrinsicHeight());
+
+        tempDrawable = ContextCompat.getDrawable(getContext(), R.drawable.ic_search_black_24dp);
+        searchDrawable = DrawableCompat.wrap(tempDrawable);
+        DrawableCompat.setTintList(searchDrawable,getHintTextColors());
+        searchDrawable.setBounds(0, 0, searchDrawable.getIntrinsicWidth(), searchDrawable.getIntrinsicHeight());
+
+        setClearIconVisible(false);
+
+
+        super.setOnTouchListener(this);
+        super.setOnFocusChangeListener(this);
+        super.addTextChangedListener(this);
+    }
+
+
+    @Override
+    public void onFocusChange(final View view, final boolean hasFocus) {
+        if (hasFocus) {
+            setClearIconVisible(getText().length() > 0);
+        } else {
+            setClearIconVisible(false);
+        }
+
+        if (onFocusChangeListener != null) {
+            onFocusChangeListener.onFocusChange(view, hasFocus);
+        }
+    }
+
+
+    @Override
+    public boolean onTouch(final View view, final MotionEvent motionEvent) {
+        final int x = (int) motionEvent.getX();
+        if (clearDrawable.isVisible() && x > getWidth() - getPaddingRight() - clearDrawable.getIntrinsicWidth()) {
+            if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                setError(null);
+                setText(null);
+            }
+            return true;
+        }
+
+        if (onTouchListener != null) {
+            return onTouchListener.onTouch(view, motionEvent);
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public final void onTextChanged(final CharSequence s, final int start, final int before, final int count) {
+        if (isFocused()) {
+            setClearIconVisible(s.length() > 0);
+        }
+
+        if(textWatcher != null){
+            textWatcher.onTextChanged(s, start, before, count);
+        }
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        if(textWatcher != null){
+            textWatcher.beforeTextChanged(s, start, count, after);
+        }
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        if(textWatcher != null){
+            textWatcher.afterTextChanged(s);
+        }
+    }
+
+
+    private void setClearIconVisible(boolean visible) {
+        clearDrawable.setVisible(visible, false);
+        setCompoundDrawables(searchDrawable, null,
+                visible ? clearDrawable : null, null);
+    }
+
+}
+```
+
 ### 안드로이드 슬라이더 android slider  
 ```
     // image slider
