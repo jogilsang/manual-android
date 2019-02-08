@@ -13,6 +13,20 @@ android for me
 https://www.flaticon.com/search?word=rank  
 
 ### 파이어베이스 firebase 리스닝 listening start stop
+
+modify :  
+```
+
+    public void stopListening(ListenerRegistration listenerRegistration) {
+        
+        if (listenerRegistration != null) {
+            listenerRegistration.remove();
+            listenerRegistration = null;
+        }
+    }
+
+```
+
 original :  
 ```
     public void startListening() {
