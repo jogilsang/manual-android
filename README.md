@@ -12,6 +12,28 @@ android for me
 
 https://www.flaticon.com/search?word=rank  
 
+### 파이어베이스 firebase 리스닝 listening start stop
+original :  
+```
+    public void startListening() {
+        // TODO(developer): Implement
+
+        if (mQuery != null && mRegistration == null) {
+            mRegistration = mQuery.addSnapshotListener(this);
+        }
+    }
+
+    public void stopListening() {
+        if (mRegistration != null) {
+            mRegistration.remove();
+            mRegistration = null;
+        }
+
+        mSnapshots.clear();
+        notifyDataSetChanged();
+    }
+```
+
 ### 안드로이드 인텐트 값 전달 intent putextra
 
 데이터 전달  
