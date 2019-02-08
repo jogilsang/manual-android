@@ -702,6 +702,27 @@ UPC_E
                 | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 ```
+### 안드로이드 for 쿼리 거꾸로 firebase 파이어베이스 snapshot
+
+```
+        int size = queryDocumentSnapshots.size();
+
+        for ( int i = size - 1  ; i >= 0 ;  i-- ) {
+
+            // 데이터 거꾸로 받기
+            DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(i);
+            
+            // point model로 받기
+            Point point = documentSnapshot.toObject(Point.class);
+
+            // timestamp -> String 변환
+            Timestamp timestamp = documentSnapshot.getTimestamp("timestamp");
+
+            // model -> entri
+            chart.addBar(new BarModel(getTimestampToString(timestamp), (float)point.getPoint(), 0xFF56B7F1));
+
+        }
+```
 
 ### EazeGraph chart
 https://github.com/blackfizz/EazeGraph  
