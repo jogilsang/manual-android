@@ -68,6 +68,11 @@ original :
     }
 ```
 
+### FragmentStatePagerAdapter 강추
+static으로 fragment와 string 값을 선언하면 파이어스토어 listen 할때 에러가 날수있음
+getActivity를 인자로 파이어스토어 listener에 넣지말기
+pageradapter 상속함수중 getPosition 을 return_none으로 return 하기
+
 ### 안드로이드 인텐트 값 전달 intent putextra
 
 데이터 전달  
