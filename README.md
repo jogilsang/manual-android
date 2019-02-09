@@ -672,6 +672,30 @@ document key 얻기
 //                });
 ```
 
+문서 1개 가져오기 document get (addOnCompleteListener 사용하기)  
+youtube(collection)에 data(doc)의 url(field)에 String value 가져오기  
+```
+      DocumentReference docRef = mFirestore.collection("youtube").document("data");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        urlYouTube = document.getData().get("url").toString();
+
+                    } else {
+                        Log.d(TAG, "No such document");
+                        urlYouTube = "0BC10orcsaY";
+
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                    urlYouTube = "0BC10orcsaY";
+                }
+```
+
 ### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
 ```
         CollectionReference customers = mFirestore.collection("customers");
