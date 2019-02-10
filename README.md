@@ -1282,6 +1282,14 @@ ctrl + w : 단락선택
 apache poi  
 project - open moduls - jxl 검색  
 
+### jxl 라이브러리 사용법
+
+디테일(병합 , 이미지 넣기 등)  
+https://m.blog.naver.com/PostView.nhn?blogId=cream_jkh&logNo=20086677790&proxyReferer=https%3A%2F%2Fwww.google.com%2F  
+
+액셀 파일 만들기 :  
+https://yongtech.tistory.com/89  
+
 ### assets, 애셋 폴더만들기
 app 오른쪽 마우스 folder - assets  
 
