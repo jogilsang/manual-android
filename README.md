@@ -23,6 +23,52 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 랜덤 넘버 숫자 random number int
+```
+
+ * @param length 문자열 길이
+ * @return 랜덤문자열
+ */
+private static String getRandomNumber(int length)
+{
+  StringBuffer buffer = new StringBuffer();
+  Random random = new Random();
+ 
+  String chars[] = 
+    “0,1,2,3,4,5,6,7,8,9”.split(“,”);
+ 
+  for (int i=0 ; i<length ; i++)
+  {
+    buffer.append(chars[random.nextInt(chars.length)]);
+  }
+  return buffer.toString();
+}[/code]
+[출처] Android 랜덤 문자열 생성 방법(Generate random string)|작성자 우니
+```
+
+### 랜덤스트링 random string
+```
+
+ * @param length 문자열 길이
+ * @return 랜덤문자열
+ */
+private static String getRandomString(int length)
+{
+  StringBuffer buffer = new StringBuffer();
+  Random random = new Random();
+ 
+  String chars[] = 
+    “a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z”.split(“,”);
+ 
+  for (int i=0 ; i<length ; i++)
+  {
+    buffer.append(chars[random.nextInt(chars.length)]);
+  }
+  return buffer.toString();
+}[/code]
+[출처] Android 랜덤 문자열 생성 방법(Generate random string)|작성자 우니
+```
+
 ### 파이어베이스 firebase 리스닝 listening start stop
 
 modify :  
