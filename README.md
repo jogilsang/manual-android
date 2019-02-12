@@ -45,6 +45,8 @@ private static String getRandomNumber(int length)
 }[/code]
 [출처] Android 랜덤 문자열 생성 방법(Generate random string)|작성자 우니
 ```
+### edittext null error 에디트 텍스트 널 비교 에러 
+String pw = editPW.getText().toString().replaceAll("\\P{Print}","").trim();  
 
 ### 랜덤스트링 random string
 ```
