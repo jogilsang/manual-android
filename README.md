@@ -48,6 +48,12 @@ private static String getRandomNumber(int length)
 ### edittext null error 에디트 텍스트 널 비교 에러 
 String pw = editPW.getText().toString().replaceAll("\\P{Print}","").trim();  
 
+### 안드로이드 스낵바  
+
+Snackbar.make(getWindow().getDecorView().getRootView(), "ITPANGPANG", Snackbar.LENGTH_LONG).show();  
+
+출처: https://itpangpang.xyz/183 [ITPangPang]  
+
 ### 랜덤스트링 random string
 ```
 
