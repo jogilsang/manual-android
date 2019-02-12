@@ -50,6 +50,9 @@ String pw = editPW.getText().toString().replaceAll("\\P{Print}","").trim();
 
 ### 안드로이드 스낵바  
 
+
+implementation 'com.android.support:design:26.1.0'
+
 Snackbar.make(getWindow().getDecorView().getRootView(), "ITPANGPANG", Snackbar.LENGTH_LONG).show();  
 
 출처: https://itpangpang.xyz/183 [ITPangPang]  
