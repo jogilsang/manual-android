@@ -23,6 +23,13 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 카드뷰 cardview  
+```
+card_view:contentPadding="16dp"
+card_view:cardBackgroundColor="#fff"
+
+출처: https://androcode.tistory.com/19 [ANDRO::CODE]
+```
 ### 랜덤 넘버 숫자 random number int
 ```
 
