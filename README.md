@@ -760,6 +760,53 @@ youtube(collection)에 data(doc)의 url(field)에 String value 가져오기
                 }
 ```
 
+문서 1개 쿼리하기 document query
+```
+
+                    // 쿼리 선언
+                    Query mQuery = membersRef.whereEqualTo("id", getID).whereEqualTo("division", "조합원").limit(1);
+
+                    // 리스너 세팅
+                    EventListener<QuerySnapshot> listener = new EventListener<QuerySnapshot>() {
+                        @Override
+                        public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+
+                            if (e != null) {
+                                e.printStackTrace();
+                                Log.d(TAG, "Error getting documents: ");
+                                return;
+                            }
+
+                            // TODO : java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+                            if(queryDocumentSnapshots.getDocuments().size() == 0) {
+                                // Add a new sent message to the list.
+                                Check item = new Check(getID, "사용자 정보 없음");
+                                itemList.add(item);
+                            }
+                            else {
+
+                                // document에 대한 snapshot을 가져온다
+                                DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                                Member member = documentSnapshot.toObject(Member.class);
+
+                                // Add a new sent message to the list.
+                                Check item = new Check(getID, member.getName());
+
+                                itemList.add(item);
+                                Log.d(TAG, documentSnapshot.getId() + " => " + documentSnapshot.getData());
+
+                            }
+
+                            mAdapter.notifyDataSetChanged();
+
+                        }
+                    };
+
+                    ListenerRegistration registration = mQuery.addSnapshotListener(listener);
+
+                    startListening(mQuery,registration,listener);
+```
+
 
 
 ### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
