@@ -30,6 +30,42 @@ card_view:cardBackgroundColor="#fff"
 
 출처: https://androcode.tistory.com/19 [ANDRO::CODE]
 ```
+
+### 파이어스토어 유틸 연속으로 넣기 수동으로 넣기 util
+
+```
+    // TODO : nickname 항목 넣어야함
+    // TODO : adapter에서 뿌릴떄 username이 아니라 userNickname으로 해야함
+    public static Member getSeqence(Context context, int i) {
+
+        Member member = new Member();
+
+        // Cities (first elemnt is 'Any')
+        String[] ids = context.getResources().getStringArray(R.array.ids);
+        String[] names = context.getResources().getStringArray(R.array.names);
+        String[] jobs = context.getResources().getStringArray(R.array.jobs);
+        String[] births = context.getResources().getStringArray(R.array.births);
+        String[] divisions = context.getResources().getStringArray(R.array.divisions);
+        String[] nonPaymentPeriods = context.getResources().getStringArray(R.array.nonpaymentperiods);
+        String[] phones = context.getResources().getStringArray(R.array.phones);
+        String[] addresss = context.getResources().getStringArray(R.array.addresss);
+
+        // member setting
+        member.setId(ids[i]);
+        member.setName(names[i]);
+        member.setJob(jobs[i]);
+        member.setBirth(births[i]);
+        member.setDivision(divisions[i]);
+        member.setNonPaymentPeriod(nonPaymentPeriods[i]);
+        member.setPhone(phones[i]);
+        member.setAddress(addresss[i]);
+
+        // member return
+        return member;
+    }
+
+```
+
 ### 랜덤 넘버 숫자 random number int
 ```
 
