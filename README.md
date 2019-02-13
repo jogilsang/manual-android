@@ -760,35 +760,7 @@ youtube(collection)에 data(doc)의 url(field)에 String value 가져오기
                 }
 ```
 
-문서 1개 쿼리하기 document get (addOnCompleteListener 사용하기)
-```
-                Query docRef = mFirestore.collection("members").whereEqualTo("division", "조합원").whereEqualTo("id", id);
-                docRef.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                        if (task.isSuccessful()) {
-
-                            // 딱 하나만 받는다.
-                            DocumentSnapshot document = task.getResult().getDocuments().get(0);
-                            
-                                Member member = document.toObject(Member.class);
-
-                                // Add a new sent message to the list.
-                                Check item = new Check(id, member.getName());
-
-                                itemList.add(item);
-
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-
-                    }
-
-                });
-```
 
 ### 안드로이드 파이어스토어 파이어베이스 랜덤 키 get key firebase firestore
 ```
