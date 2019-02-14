@@ -23,6 +23,24 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### progress dialog
+
+```
+ProgressDialog progressDialog = new ProgressDialog(this);
+
+progressDialog.setIcon(R.drawable.ic_launcher_foreground);
+
+progressDialog.setTitle("Wait...");
+
+progressDialog.setMessage("Progress Dialog");
+
+progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // 스타일 설정
+
+progressDialog.setIndeterminate(true); // 진행 상태 표시 (ex : 20 / 100)
+
+progressDialog.show();
+```
+
 ### autocomletetextview edittext 자동완성 
 ```
 
