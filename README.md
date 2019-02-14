@@ -23,6 +23,22 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### autocomletetextview edittext 자동완성 
+```
+
+   edit_job  = (AutoCompleteTextView)findViewById(R.id.edit_job);
+    edit_division  = (AutoCompleteTextView)findViewById(R.id.edit_division);
+
+        String[] jobItems = getResources().getStringArray(R.array.auto_job);
+        String[] divisionItems = getResources().getStringArray(R.array.auto_division);
+
+        edit_job.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, jobItems));
+
+        edit_division.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, divisionItems));
+```
+
 ### 알림창 선택지 alertBuilder choice
 
 ```
