@@ -23,6 +23,62 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 안드로이드 아이디 비밀번호 저장 sharedreference android 
+
+```
+public void onCreate(Bundle savedInstanceState) 
+ super.onCreate(savedInstanceState);
+ 
+ startActivity(new Intent(this,Loading.class));
+ setContentView(R.layout.login);
+ 
+ EditText etId=(EditText)findViewById(R.id.id);
+ EditText etPwd=(EditText)findViewById(R.id.password);
+ CheckBox etIdSave=(CheckBox)findViewById(R.id.id_save);
+ CheckBox etPwdSave=(CheckBox)findViewById(R.id.pwd_save);
+ 
+ etId.requestFocus();
+ 
+ // Activtiy 불러올 시 SharedPreFerences에 저장 되었는  "pref"에서 조건에 맞춰 값을 가져온다 
+ SharedPreferences pref=getSharedPreferences("pref",Activity.MODE_PRIVATE);
+ String id=pref.getString("id_save", "");
+ String pwd=pref.getString("pwd_save", "");
+ Boolean chk1=pref.getBoolean("chk1", false);
+ Boolean chk2=pref.getBoolean("chk2", false);
+ 
+ if(chk1==true){
+    etId.setText(id);
+    etIdSave.setChecked(chk1);
+    }
+  if(chk2==true){
+    etPwd.setText(pwd);
+    etPwdSave.setChecked(chk2);
+    }
+}
+ 
+ 
+// 현재 Activity 나갈 시 패스워드 비밀번호 저장 
+public void onStop(){ 
+ super.onStop();
+ 
+ SharedPreferences pref = getSharedPreferences("pref", Activity.MODE_PRIVATE); 
+ SharedPreferences.Editor editor = pref.edit(); 
+ EditText etId=(EditText)findViewById(R.id.id);
+ EditText etPwd=(EditText)findViewById(R.id.password);
+ CheckBox etIdSave=(CheckBox)findViewById(R.id.id_save);
+ CheckBox etPwdSave=(CheckBox)findViewById(R.id.pwd_save);
+ 
+ //SharedPreferences에 각 아이디를 지정하고 EditText 내용을 저장한다.
+ editor.putString("id_save", etId.getText().toString());
+ editor.putString("pwd_save", etPwd.getText().toString());
+ editor.putBoolean("chk1", etIdSave.isChecked());
+ editor.putBoolean("chk2", etPwdSave.isChecked());
+ 
+ editor.commit();
+}
+[출처] [참고소스] 아이디 비밀번호 저장 (ShredPreference)|작성자 사자머리님
+```
+
 ### progress dialog
 
 ```
