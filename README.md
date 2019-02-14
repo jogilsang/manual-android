@@ -23,6 +23,43 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 알림창 선택지 alertBuilder choice
+
+```
+public void selectFontAlign() {
+
+        AlertDialog.Builder init_dlg = new AlertDialog.Builder(this);
+
+        // left, right, center
+        final String main_q1 = getString(R.string.font_align_center);
+        final String main_q2 = getString(R.string.font_align_left);
+        final String main_q3 = getString(R.string.font_align_right);
+
+        final CharSequence[] items_dlg = {main_q1
+                ,main_q2
+                ,main_q3
+        };
+
+        init_dlg.setTitle(getString(R.string.font_align_question))
+                // 제목 설정
+
+                .setItems(items_dlg, new DialogInterface.OnClickListener(){
+                    // 목록 클릭시 설정
+                    public void onClick(DialogInterface dialog, int index){
+                        showProgressDialog();
+                        // index 값 넘겨주면 변경
+                        returnAlignFont(index);
+                        basicToast(items_dlg[index].toString()+" "+getString(R.string.font_change_message));
+                        hideProgressDialog();
+                    }
+                });
+
+        init_dlg.show();    // 알림창 띄우기
+
+    }
+
+```
+
 ### 하단 키보드만 올라오게 하기. 다른 부산물들 안딸려오게
 메니페스트 액티비티 안에 android:windowSoftInputMode="adjustPan"  
 
