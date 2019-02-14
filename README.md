@@ -23,6 +23,9 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 하단 키보드만 올라오게 하기. 다른 부산물들 안딸려오게
+메니페스트 액티비티 안에 android:windowSoftInputMode="adjustPan"  
+
 ### 카드뷰 cardview  
 ```
 card_view:contentPadding="16dp"
