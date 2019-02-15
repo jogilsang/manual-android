@@ -23,6 +23,51 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 파이어베이스 스토리지 storage
+업로드  
+```
+    private void uploadLocalFileToFirebase(StorageReference ref, File file) {
+
+        stopProgressLoading();
+
+        // 파일 경로 보내기
+        Uri uri = Uri.fromFile(file);
+        StorageReference mRef = ref.child(uri.getLastPathSegment());
+        UploadTask uploadTask = mRef.putFile(uri);
+
+        // Register observers to listen for when the download is done or if it fails
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d(TAG, "업로드 실패");
+
+                // 업로드 실패알림
+                Toast.makeText(ScannerResultActivity.this, "업로드에 실패했습니다. 다시 시도해주세요", Toast.LENGTH_LONG).show();
+
+                // 로딩바 멈추기
+                stopProgressLoading();
+
+                // Handle unsuccessful uploads
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Log.d(TAG, "업로드 성공");
+                // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                // ...
+                // 로딩바 멈추기
+
+                // 업로드 실패알림
+                Toast.makeText(ScannerResultActivity.this, "서버 업로드에 성공했습니다.", Toast.LENGTH_LONG).show();
+
+                stopProgressLoading();
+            }
+        });
+
+    }
+
+```
+
 ### dp ,px 계산  
 ```
 개발을 하다보면 DP를 PX로 바꿔줘야할 경우가 있다.
