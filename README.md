@@ -1034,6 +1034,10 @@ youtube(collection)에 data(doc)의 url(field)에 String value 가져오기
 ### 안드로이드 글라이드 glide
 인터넷 이미지  
 ```
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+```
+
+```
             // Load image
             // Glide.with(imageView.getContext())
             //         .load(restaurant.getPhoto())
