@@ -24,6 +24,54 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 ```
 
 ### 파이어베이스 스토리지 storage
+다운로드 (이미지를 레이아웃 배경(Background)설정)
+```
+       // 배경 가져오기
+        docBackgroundRef = mFirestore.collection("background").document("home");
+        docBackgroundRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+                        backgroundUrl = document.getData().get("storageUrl").toString();
+
+                        StorageReference httpsReference = mFirestorage.getReferenceFromUrl(backgroundUrl);
+
+                        httpsReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+
+                                //  File f = new File(getRealPathFromURI(uri));
+                                File f = new File(uri.getPath());
+                                Drawable d = Drawable.createFromPath(f.getAbsolutePath());
+                                activityLayout.setBackground(d);
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception exception) {
+                                // Handle any errors
+                            }
+                        });
+
+                    } else {
+                        Toast.makeText(HomeActivity.this, "서버와 통신에 문제가 발생했습니다", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "No such document");
+
+                    }
+                } else {
+                    Toast.makeText(HomeActivity.this, "서버와 통신에 문제가 발생했습니다", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+
+            }
+        });
+
+```
+
 업로드  
 ```
     private void uploadLocalFileToFirebase(StorageReference ref, File file) {
