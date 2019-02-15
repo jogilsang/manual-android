@@ -23,6 +23,21 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### dp ,px 계산  
+```
+개발을 하다보면 DP를 PX로 바꿔줘야할 경우가 있다.
+안드로이드 레이아웃을 코드 작성 할때 는 DP를 사용할 수가 없기 때문이다.
+사용하는 공식은 아래와 같다.
+
+px = dp * 단말 DPI/기본 160
+dp = px * 기본 160/단말 DPI
+mdpi 지원 단말일 경우 dpi는 160 이므로 1dp 160/160 = 1pixel이 된다.
+xxhdpi 지원 단말일 경우, 5dp를 pixel로 계산하면
+5dp 480/160 = 15 pixel 이므로 xxhdpi 단말의 5dp는 15pixel이 된다.
+
+https://blog.cracker9.io/2018/03/13/Android_DPI/
+```
+
 ### 안드로이드 아이디 비밀번호 저장 sharedreference android 
 
 ```
