@@ -23,6 +23,14 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### 키오스크   
+
+```
+https://www.andreasschrade.com/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
+
+https://stackoverrun.com/ko/q/12645692
+```
+
 ### glide 글라이드 화질 높이기
 
 ```
