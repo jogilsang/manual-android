@@ -23,6 +23,19 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
         .create();
 ```
 
+### glide 글라이드 화질 높이기
+
+```
+        //                         Load image
+        Glide.with(DetailActivity.this)
+                .load(detailUrl)
+                .asBitmap()
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .format(DecodeFormat.PREFER_ARGB_8888)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(detailImage);
+```
+
 ### 파이어베이스 스토리지 storage
 다운로드 (이미지를 레이아웃 배경(Background)설정)
 ```
