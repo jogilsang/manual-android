@@ -36,6 +36,26 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
                 .into(detailImage);
 ```
 
+listener
+```
+    Glide.with(this)
+            .load("https://raw.githubusercontent.com/bumptech/glide/master/static/glide_logo.png")
+            .listener(new RequestListener<Drawable>() {
+                @Override
+                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                    progressBar.setVisibility(View.GONE);
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                    progressBar.setVisibility(View.GONE);
+                    return false;
+                }
+            })
+            .into(imageView);
+```
+
 ### 파이어베이스 스토리지 storage
 다운로드 (이미지를 레이아웃 배경(Background)설정)
 ```
