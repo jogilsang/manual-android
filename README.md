@@ -8,6 +8,10 @@ android for me
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 리사이클뷰 recyclerview 동일 간격 그리드뷰 gridlayoutmanager
+
+https://gist.github.com/yqritc/ccca77dc42f2364777e1
+
 ### 안드로이드 웹뷰 자바스크립트
 https://biig.tistory.com/59  
 
