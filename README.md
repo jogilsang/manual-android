@@ -1,6 +1,10 @@
 # manual-android
 android for me
 
+### constraintLayout
+weight 주는법 :  
+https://blog.naver.com/lion_kwon/221271737331  
+
 ### 작업교훈
 1. 이미지파일이 debug 만들떄랑 release 만들떄랑 에러로 인식될 확률이 있음. 파일 확장자는 웬만하면 png고 이름변경으로 바꾸면안됨  
    보내기전에 release 해보기  
