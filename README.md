@@ -21,7 +21,10 @@ https://biig.tistory.com/59
 
 ### 비디오 캐시 video cache
 
-https://github.com/danikula/AndroidVideoCache  
+https://github.com/danikula/AndroidVideoCache
+
+multiDexError :
+https://stackoverflow.com/questions/39487666/trying-to-set-multidexapplication-classcastexception  
 
 ### 아이콘 icon
 
