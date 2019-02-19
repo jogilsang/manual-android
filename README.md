@@ -2824,6 +2824,32 @@ msg.putExtra(Intent.EXTRA_TITLE,"제목");
 msg.setType("text/plain");
 startActivity(Intent.createChooser(msg, "공유"));
 ```
+link share :  
+```
+        // 공유하기
+        btnShareToOthers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent msg = new Intent(Intent.ACTION_SEND);
+
+                msg.addCategory(Intent.CATEGORY_DEFAULT);
+
+                //msg.putExtra(Intent.EXTRA_SUBJECT,"주제");
+
+                msg.putExtra(Intent.EXTRA_TEXT, getString(R.string.text_share_head) +
+                        getString(R.string.data_phone) +
+                        getString(R.string.text_share_tail));
+
+                msg.putExtra(Intent.EXTRA_TITLE, "공유하기");
+
+                msg.setType("text/plain");
+
+                startActivity(Intent.createChooser(msg, "공유"));
+
+            }
+        });
+```
 
 ### 전화걸기
 ```
