@@ -12,6 +12,35 @@ https://blog.naver.com/lion_kwon/221271737331
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 웹뷰 보안이슈
+
+```
+m_webView.setWebViewClient(new WebViewClient() {
+
+   @Override
+   public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error)
+   {
+      //super.onReceivedSslError(view, handler, error);
+      final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.sharedActivity().getContext());
+      builder.setMessage("이 사이트의 보안 인증서는 신뢰할 수 없습니다.");
+      builder.setPositiveButton("continue", new DialogInterface.OnClickListener() {
+         @Override
+         public void onClick(DialogInterface dialog, int which) {
+            handler.proceed();
+         }
+      });
+      builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+         @Override
+         public void onClick(DialogInterface dialog, int which) {
+            handler.cancel();
+         }
+      });
+      final AlertDialog dialog = builder.create();
+      dialog.show();
+
+   });
+```
+
 ### 이미지 용량 큰거 다루기, 하드웨어 많이 쓰기
         android:largeHeap="true"
 	    android:hardwareAccelerated="true"
