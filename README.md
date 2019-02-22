@@ -12,6 +12,15 @@ https://blog.naver.com/lion_kwon/221271737331
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 이미지 용량 큰거 다루기, 하드웨어 많이 쓰기
+        android:largeHeap="true"
+	    android:hardwareAccelerated="true"
+	       dexOptions {
+        javaMaxHeapSize "4g"
+    }
+       multiDexEnabled true
+        vectorDrawables.useSupportLibrary true
+
 ### 리사이클뷰 recyclerview 동일 간격 그리드뷰 gridlayoutmanager
 
 https://gist.github.com/yqritc/ccca77dc42f2364777e1
