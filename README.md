@@ -997,6 +997,69 @@ https://stackoverflow.com/questions/15314740/android-sound-not-playing-in-splash
 
 addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>()
 
+컬렉션에 도큐먼트에 컬렉션 추가하기  
+컬렉션 도큐먼트 컬렉션 도큐먼트 추가하기  
+collection -> document -> collection -> document  
+```
+   private void addCollectionToDocument(String collection){
+
+        final CollectionReference productRef = mFirestore.collection(collection);
+
+        // 쿼리 선언
+        Query mQuery = productRef.orderBy("order", Query.Direction.ASCENDING);
+
+        // 리스너 세팅
+        EventListener<QuerySnapshot> listener = new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+
+                if (e != null) {
+                    e.printStackTrace();
+                    Log.d(TAG, "Error getting documents: ");
+                    return;
+                }
+
+                // TODO : java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+                if(queryDocumentSnapshots.getDocuments().size() == 0) {
+                    // Add a new sent message to the list.
+                    Log.d(TAG, "Empty documents ");
+                }
+                else {
+
+                    // querysnapshot 받아오기
+                    for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+
+                        // point model로 받기
+                        Product item = documentSnapshot.toObject(Product.class);
+                        String id = documentSnapshot.getId();
+
+                        CollectionReference detailRef = productRef.document(id).collection("detail");
+
+                        for( int i =0 ; i < 5 ; i ++) {
+
+                            Detail detail = ItemSequenceUtil.getStaticDetail(UtilActivity.this,i+1);
+
+                            // model -> entri
+                            detailRef.add(detail);
+                            Log.d(TAG, String.valueOf(i+1)+"번쨰 insert");
+
+                        }
+
+                    }
+
+                }
+
+
+            }
+        };
+
+        ListenerRegistration registration = mQuery.addSnapshotListener(listener);
+
+        startListening(mQuery,registration,listener);
+
+
+    }
+```
 
 document key 얻기  
 쿼리로 얻기 예시 : customers 콜렉션에서 userId 값을 갖는 document의 key값을 얻는다  
