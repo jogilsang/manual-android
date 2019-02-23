@@ -3,7 +3,60 @@ android for me
 
 ### constraintLayout
 weight 주는법 :  
-https://blog.naver.com/lion_kwon/221271737331  
+https://blog.naver.com/lion_kwon/221271737331
+
+### 화면 캡쳐 capture screen
+
+```
+  public void capture(View v) {
+
+        v.destroyDrawingCache();
+        v.setDrawingCacheEnabled(true);
+        v.buildDrawingCache();
+        Bitmap captureView = v.getDrawingCache();
+
+        // backup
+        // String fileName = getExternalPath(getString(R.string.app_name));
+        // String address =  Environment.getExternalStorageDirectory().
+        // getAbsolutePath()+"/Negatore/"+System.currentTimeMillis()+".png";
+
+        String fileName = getString(R.string.app_name) + "/" + System.currentTimeMillis()+".png";
+        String address =  getExternalPath(fileName);
+
+        // 경로설정, newPostActivity 참조
+
+        String captureMessage = getString(R.string.capture_message) + "\r\n " + getString(R.string.capture_path)+ address;
+        // 캡쳐 성공시 날릴 메세지 작성
+
+        BufferedOutputStream out = null;
+        File copyFile = new File(address);
+        // 주소 기반으로 스트림만들기
+
+        // sendBroadcast를 엘범을 최신화한다.
+
+        try {
+
+            copyFile.createNewFile();
+            out = new BufferedOutputStream(new FileOutputStream(copyFile));
+            captureView.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                    Uri.fromFile(copyFile)));
+
+            basicToast(captureMessage);
+            //Toast.makeText(getActivity(), captureMessage, Toast.LENGTH_LONG).show();
+            // 저장되었다는 문구 생성
+
+            out.close();
+            // 이거때문인가
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+```
 
 ### 작업교훈
 1. 이미지파일이 debug 만들떄랑 release 만들떄랑 에러로 인식될 확률이 있음. 파일 확장자는 웬만하면 png고 이름변경으로 바꾸면안됨  
