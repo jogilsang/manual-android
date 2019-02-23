@@ -16,6 +16,23 @@ https://blog.naver.com/lion_kwon/221271737331
 
 https://guides.codepath.com/android/Basic-Painting-with-Views
 
+### 동그란 버튼
+```
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/color_main"/>
+            <corners android:radius="10dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/google"
+                />
+        </shape>
+    </item>
+</selector>
+```
+
+
 ### 웹뷰 보안이슈
 
 ```
