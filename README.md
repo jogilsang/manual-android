@@ -12,6 +12,10 @@ https://blog.naver.com/lion_kwon/221271737331
 3. 웹앱을 만들더라도 permission 항상 주의하자  
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
+### 페인팅보드 painting board 펜 쓰기 pentool
+
+https://guides.codepath.com/android/Basic-Painting-with-Views
+
 ### 웹뷰 보안이슈
 
 ```
