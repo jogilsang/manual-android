@@ -154,6 +154,8 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 ```
 
 ### 키오스크   
+화면고정 설정 :  
+https://support.google.com/nexus/answer/6118421?hl=ko
 
 몰입모드 공식문서 :   
 https://developer.android.com/training/system-ui/immersive#java  
