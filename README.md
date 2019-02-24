@@ -154,6 +154,10 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 ```
 
 ### 키오스크   
+밝기최대
+모든알림해제
+
+
 화면고정 설정 :  
 https://support.google.com/nexus/answer/6118421?hl=ko
 
