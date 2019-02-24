@@ -155,6 +155,9 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 
 ### 키오스크   
 
+몰입모드 공식문서 :   
+https://developer.android.com/training/system-ui/immersive#java  
+
 ```
 https://www.andreasschrade.com/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
 
