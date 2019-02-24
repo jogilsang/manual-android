@@ -5,6 +5,45 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 안드로이드 리소스 테블릿 화면 레이아웃 
+
+```
+Low density Small screens QVGA 240x320 (120dpi):
+
+layout-small-ldpi (240x320)  
+layout-small-land-ldpi (320x240)
+
+Low density Normal screens WVGA400 240x400 (x432) (120dpi):
+
+layout-ldpi  (240 x 400 )
+layout-land-ldpi  (400 x 240 )
+
+Medium density Normal screens HVGA 320x480 (160dpi):
+
+layout-mdpi (320 x 480 )
+layout-land-mdpi (480 x 320 )
+
+Medium density Large screens HVGA 320x480 (160dpi):
+
+layout-large-mdpi (320 x 480 )
+layout-large-land-mdpi (480 x 320)
+
+Galaxy Tab ( 240 dpi ):
+
+layout-large  (600 x 1024) 
+layout-large-land  (1024 x 600)
+
+High density Normal screens WVGA800 480x800 (x854) (240 dpi):
+
+layout-hdpi (480 x 800)
+layout-land-hdpi (800 x 480)
+
+Xoom (medium density large but 1280x800 res) (160 dpi):
+
+layout-xlarge (800 x 1280)
+layout-xlarge-land (1280 x 800)
+```
+
 ### 화면 캡쳐 capture screen
 
 ```
