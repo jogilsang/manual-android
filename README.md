@@ -2136,34 +2136,24 @@ http://nine01223.tistory.com/101
 ```
 border.xml
 <?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
- <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle" >
+            <stroke
+                android:width="1dp"
+                android:color="@color/colorPrimary" />
 
+            <solid android:color="#FFF" />
+        </shape>
+    </item>
 
+</layer-list>
 
-	<item> 
-
-	    <shape android:shape="rectangle">
-
-	      <solid android:color="#d7d7d7" /> 
-
-	    </shape>
-
-	  </item>   
-
-	    <item android:top="1dp" android:bottom="1dp">  
-
-	     <shape android:shape="rectangle"> 
-
-	      <solid android:color="#ffffff" />
-
-	    </shape>
-
-	   </item>    
-
-
-
- </layer-list> 
 출처: http://ellordnet.tistory.com/27 [IT in MT]
 ```
 ### byte[] string 상호변환
