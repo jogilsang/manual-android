@@ -290,8 +290,16 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 ```
 
 ### 키오스크   
+정리종결 :  
+https://www.andreasschrade.com/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/  
+
+홈키,recent 키 :  
+https://hackernoon.com/disable-android-home-back-and-active-apps-buttons-f7450dfeddcd  
+
 설정 도와주는 앱 sureLock :  
 https://play.google.com/store/apps/details?id=com.gears42.surelock&hl=en  
+
+-----------------------------------------------------------------------------
 
 밝기최대  
 모든알림해제  
