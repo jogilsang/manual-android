@@ -193,6 +193,9 @@ AlertDialog alertDialog = new AlertDialog.Builder(getContext(), R.style.MyDialog
 ```
 
 ### 키오스크   
+설정 도와주는 앱 sureLock :  
+https://play.google.com/store/apps/details?id=com.gears42.surelock&hl=en  
+
 밝기최대  
 모든알림해제  
 
@@ -203,7 +206,33 @@ https://github.com/googlesamples/android-ImmersiveMode
 https://support.google.com/nexus/answer/6118421?hl=ko  
 
 몰입모드 공식문서 :   
-https://developer.android.com/training/system-ui/immersive#java  
+https://developer.android.com/training/system-ui/immersive#java 
+
+안드로이드 관리 API
+https://developers.google.com/android/management/
+
+Gokiosk - 키오스크잠금
+https://play.google.com/store/apps/details?id=net.intricare.enterprisedevicekiosklockdown
+
+https://code.i-harness.com/ko-kr/q/10bc8a6
+
+안드로이드 locktask 공식문서 :  
+https://developer.android.com/reference/android/app/Activity.html#stopLockTask()
+
+키오스크 만들기 :  
+http://wenchaojiang.github.io/blog/realise-Android-kiosk-mode/  
+
+설명 :  
+https://www.sureshjoshi.com/mobile/android-kiosk-mode-without-root/
+
+android-homekey-locker  
+https://github.com/shaobin0604/Android-HomeKey-Locker/blob/master/HomeLockerSample/src/main/java/io/github/homelocker/app/MainActivity.java
+
+키오스크만들기 :  
+https://snow.dog/blog/kiosk-mode-android  
+
+locktest :  
+https://developer.android.com/work/dpc/dedicated-devices/lock-task-mode
 
 ```
 https://www.andreasschrade.com/2015/02/16/android-tutorial-how-to-create-a-kiosk-mode-in-android/
