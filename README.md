@@ -105,9 +105,17 @@ layout-xlarge-land (1280 x 800)
 4. 웹앱 받을떄 http 인지 https 인지 확인하고받자
 
 ### 페인팅보드 painting board 펜 쓰기 pentool
+지우기 :  
+```
+          simpleDrawingView.onClear();
+                simpleDrawingView.refreshDrawableState();
+                simpleDrawingView.invalidate();
+```
 
+링크 :  
 https://guides.codepath.com/android/Basic-Painting-with-Views
 
+xml :  
 ```
             <com.tablet.lazer.view.SimpleDrawingView
                 android:id="@+id/simpleDrawingView"
@@ -120,6 +128,7 @@ https://guides.codepath.com/android/Basic-Painting-with-Views
                 />
 ```
 
+액티비티 :  
 ```
 package com.tablet.lazer.view;
 
