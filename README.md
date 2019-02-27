@@ -97,6 +97,21 @@ layout-xlarge-land (1280 x 800)
     }
 ```
 
+### 안드로이드 android scroll 스크롤 리사이클러뷰 리사이클뷰
+```
+<android.support.v7.widget.RecyclerView
+        android:id="@+id/document_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbarSize="5dp"
+        android:background="@color/activity_bg"
+        android:dividerHeight="4dp" />
+```
+
 ### 작업교훈
 1. 이미지파일이 debug 만들떄랑 release 만들떄랑 에러로 인식될 확률이 있음. 파일 확장자는 웬만하면 png고 이름변경으로 바꾸면안됨  
    보내기전에 release 해보기  
