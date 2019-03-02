@@ -9,6 +9,13 @@ https://blog.naver.com/lion_kwon/221271737331
 
 비트맵 가져와서 저장하고 파일 패스로 받아와야함
 그냥 data.getData()해서 하니까 경로가 안뜸 시@
+
+```
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_PICK);
+                startActivityForResult(Intent.createChooser(intent,"Get Album"), REQUEST_IMAGE_1);
+```
 ```
 @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
