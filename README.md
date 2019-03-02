@@ -82,6 +82,96 @@ layout-xlarge-land (1280 x 800)
 
 ### 화면 캡쳐 capture screen
 
+lazer app capture
+```
+```
+    public void capture(View v) {
+
+        v.destroyDrawingCache();
+        v.setDrawingCacheEnabled(true);
+        v.buildDrawingCache();
+        Bitmap captureView = v.getDrawingCache();
+
+        // backup
+        // String fileName = getExternalPath(getString(R.string.app_name));
+        // String address =  Environment.getExternalStorageDirectory().
+        // getAbsolutePath()+"/Negatore/"+System.currentTimeMillis()+".png";
+
+
+        // TODO : 날짜_사람이름_서명 및 동의내용
+
+        // 날짜 받아오기
+        Date date = new Date();
+        DateFormat df = new SimpleDateFormat("yyyyMMdd");
+        TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+        df.setTimeZone(time);
+        String str = df.format(date);
+
+        String fileName = str + "_" + valueName + "_" +"서명동의완료.png";
+        String filePath = getString(R.string.app_name) + "/" + fileName;
+        //System.currentTimeMillis()+".png";
+        String address =  getExternalPath(filePath);
+
+        // 경로설정, newPostActivity 참조
+
+        String captureMessage = address + "저장됬습니다";
+        // 캡쳐 성공시 날릴 메세지 작성
+
+        BufferedOutputStream out = null;
+        File copyFile = new File(address);
+        // 주소 기반으로 스트림만들기
+
+        // sendBroadcast를 엘범을 최신화한다.
+
+        try {
+
+            copyFile.createNewFile();
+            out = new BufferedOutputStream(new FileOutputStream(copyFile));
+            captureView.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                    Uri.fromFile(copyFile)));
+
+            Log.d(TAG, captureMessage);
+            //Toast.makeText(getActivity(), captureMessage, Toast.LENGTH_LONG).show();
+            // 저장되었다는 문구 생성
+
+            out.close();
+            // 이거때문인가
+
+            //화면 캡처후 저장
+            if(lang.equals("KR")) {
+                Toast.makeText(MainActivity.this, "서명이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(MainActivity.this, "Your signature is complete.", Toast.LENGTH_SHORT).show();
+            }
+
+
+            finish();
+            overridePendingTransition(R.anim.not_move_activity,R.anim.rightout_activity);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+```
+    public String getExternalPath(String forlderName){
+
+        String sdPath ="";
+        String ext = Environment.getExternalStorageState();
+        if(ext.equals(Environment.MEDIA_MOUNTED)){
+            sdPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + forlderName;
+        }else{
+            sdPath  = getFilesDir() +"/" + forlderName;
+
+        }
+        return sdPath;
+    }
+```
+
 ```
   public void capture(View v) {
 
