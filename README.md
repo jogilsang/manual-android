@@ -8,38 +8,79 @@ https://blog.naver.com/lion_kwon/221271737331
 ### 인탠트 이미지 겔러리 경로 가져오기
 
 ```
+@Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == SELECT_PICTURE) {
-                Uri selectedImageUri = data.getData();
-                selectedImagePath = getPath(selectedImageUri);
-            }
-        }
-    }
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+
+            // 이미지를 요청했는대
+            case REQUEST_IMAGE_1 :
+
+                // 결과가 OK 였다면
+                if (resultCode == Activity.RESULT_OK) {
+                    try {
+
+                        // URI 가져오기
+                        Uri selectedImageUri = data.getData();
+
+                        // 선택한 이미지에서 비트맵 생성
+                        InputStream in = context.getContentResolver().openInputStream(selectedImageUri);
+                        Bitmap img = BitmapFactory.decodeStream(in);
+                        in.close();
+
+                        String path = getString(R.string.app_name);
+                        String fileName = "/" + System.currentTimeMillis()+".png";
+                        String externalPath = getExternalPath(path);
+
+                        String address = externalPath + fileName;
+
+                        BufferedOutputStream out = null;
+
+                        File dirFile = new File(externalPath);
+
+                        if(!dirFile.isDirectory()){
+                            dirFile.mkdirs();
+                        }
+
+                        File copyFile = new File(address);
+                        
+                        // 주소 기반으로 스트림만들기
+
+                        // sendBroadcast를 엘범을 최신화한다.
+
+                        try {
+
+                            copyFile.createNewFile();
+
+                            out = new BufferedOutputStream(new FileOutputStream(copyFile));
+
+                            img.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+                            getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                                    Uri.fromFile(copyFile)));
+
+                            Log.d(TAG, "이미지저장됨");
+                            //Toast.makeText(getActivity(), captureMessage, Toast.LENGTH_LONG).show();
+                            // 저장되었다는 문구 생성
+
+                            out.close();
+                            // 이거때문인가
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Log.d(TAG, "에러");
+                        }
+
+
+                        // drawable로 변환
+                        Drawable drawable = new BitmapDrawable(img);
+
+                        // 이미지 표시
+                        btnImage1.setBackground(drawable);
 ```
 
-```
-    /**
-     * 사진의 URI 경로를 받는 메소드 
-     */
-    public String getPath(Uri uri) {
-            // uri가 null일경우 null반환 
-            if( uri == null ) {
-                return null;
-            }
-            // 미디어스토어에서 유저가 선택한 사진의 URI를 받아온다. 
-            String[] projection = { MediaStore.Images.Media.DATA };
-            Cursor cursor = managedQuery(uri, projection, null, null, null);
-            if( cursor != null ){
-                int column_index = cursor
-                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-                cursor.moveToFirst();
-                return cursor.getString(column_index);
-            }
-            // URI경로를 반환한다. 
-            return uri.getPath();
-    }
-```
 
 ### 안드로이드 리소스 테블릿 화면 레이아웃 
 
@@ -82,95 +123,8 @@ layout-xlarge-land (1280 x 800)
 
 ### 화면 캡쳐 capture screen
 
-lazer app capture
-```
-```
-    public void capture(View v) {
-
-        v.destroyDrawingCache();
-        v.setDrawingCacheEnabled(true);
-        v.buildDrawingCache();
-        Bitmap captureView = v.getDrawingCache();
-
-        // backup
-        // String fileName = getExternalPath(getString(R.string.app_name));
-        // String address =  Environment.getExternalStorageDirectory().
-        // getAbsolutePath()+"/Negatore/"+System.currentTimeMillis()+".png";
 
 
-        // TODO : 날짜_사람이름_서명 및 동의내용
-
-        // 날짜 받아오기
-        Date date = new Date();
-        DateFormat df = new SimpleDateFormat("yyyyMMdd");
-        TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
-        df.setTimeZone(time);
-        String str = df.format(date);
-
-        String fileName = str + "_" + valueName + "_" +"서명동의완료.png";
-        String filePath = getString(R.string.app_name) + "/" + fileName;
-        //System.currentTimeMillis()+".png";
-        String address =  getExternalPath(filePath);
-
-        // 경로설정, newPostActivity 참조
-
-        String captureMessage = address + "저장됬습니다";
-        // 캡쳐 성공시 날릴 메세지 작성
-
-        BufferedOutputStream out = null;
-        File copyFile = new File(address);
-        // 주소 기반으로 스트림만들기
-
-        // sendBroadcast를 엘범을 최신화한다.
-
-        try {
-
-            copyFile.createNewFile();
-            out = new BufferedOutputStream(new FileOutputStream(copyFile));
-            captureView.compress(Bitmap.CompressFormat.PNG, 100, out);
-
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
-                    Uri.fromFile(copyFile)));
-
-            Log.d(TAG, captureMessage);
-            //Toast.makeText(getActivity(), captureMessage, Toast.LENGTH_LONG).show();
-            // 저장되었다는 문구 생성
-
-            out.close();
-            // 이거때문인가
-
-            //화면 캡처후 저장
-            if(lang.equals("KR")) {
-                Toast.makeText(MainActivity.this, "서명이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(MainActivity.this, "Your signature is complete.", Toast.LENGTH_SHORT).show();
-            }
-
-
-            finish();
-            overridePendingTransition(R.anim.not_move_activity,R.anim.rightout_activity);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-```
-    public String getExternalPath(String forlderName){
-
-        String sdPath ="";
-        String ext = Environment.getExternalStorageState();
-        if(ext.equals(Environment.MEDIA_MOUNTED)){
-            sdPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + forlderName;
-        }else{
-            sdPath  = getFilesDir() +"/" + forlderName;
-
-        }
-        return sdPath;
-    }
-```
 
 ```
   public void capture(View v) {
@@ -185,17 +139,21 @@ lazer app capture
         // String address =  Environment.getExternalStorageDirectory().
         // getAbsolutePath()+"/Negatore/"+System.currentTimeMillis()+".png";
 
-        String fileName = getString(R.string.app_name) + "/" + System.currentTimeMillis()+".png";
-        String address =  getExternalPath(fileName);
+                 String path = getString(R.string.app_name);
+                        String fileName = "/" + System.currentTimeMillis()+".png";
+                        String externalPath = getExternalPath(path);
 
-        // 경로설정, newPostActivity 참조
+                        String address = externalPath + fileName;
 
-        String captureMessage = getString(R.string.capture_message) + "\r\n " + getString(R.string.capture_path)+ address;
-        // 캡쳐 성공시 날릴 메세지 작성
+                        BufferedOutputStream out = null;
 
-        BufferedOutputStream out = null;
-        File copyFile = new File(address);
-        // 주소 기반으로 스트림만들기
+                        File dirFile = new File(externalPath);
+
+                        if(!dirFile.isDirectory()){
+                            dirFile.mkdirs();
+                        }
+
+                        File copyFile = new File(address);
 
         // sendBroadcast를 엘범을 최신화한다.
 
