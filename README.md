@@ -2319,6 +2319,21 @@ https://designguidelines.withgoogle.com/wearos/style/color.html#color-dark-color
 
 ### 스피너, spinner, 텍스트선택리스트
 ```
+        final Spinner s1 = (Spinner) findViewById(R.id.spinner1);
+	
+         final String [] city = {"서울특별시","인천광역시","부산광역시",
+        // 1 city 에 대한 Spinner
+        ArrayAdapter adapter = new ArrayAdapter(
+                getApplicationContext(), // 현재화면의 제어권자
+                android.R.layout.simple_spinner_item, // 레이아웃
+                city); // 데이터
+
+        s1.setAdapter(adapter);
+
+출처: https://bitsoul.tistory.com/44 [Happy Programmer~]
+```
+
+```
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
