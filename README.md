@@ -5,6 +5,42 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 인탠트 이미지 겔러리 경로 가져오기
+
+```
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == SELECT_PICTURE) {
+                Uri selectedImageUri = data.getData();
+                selectedImagePath = getPath(selectedImageUri);
+            }
+        }
+    }
+```
+
+```
+    /**
+     * 사진의 URI 경로를 받는 메소드 
+     */
+    public String getPath(Uri uri) {
+            // uri가 null일경우 null반환 
+            if( uri == null ) {
+                return null;
+            }
+            // 미디어스토어에서 유저가 선택한 사진의 URI를 받아온다. 
+            String[] projection = { MediaStore.Images.Media.DATA };
+            Cursor cursor = managedQuery(uri, projection, null, null, null);
+            if( cursor != null ){
+                int column_index = cursor
+                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                cursor.moveToFirst();
+                return cursor.getString(column_index);
+            }
+            // URI경로를 반환한다. 
+            return uri.getPath();
+    }
+```
+
 ### 안드로이드 리소스 테블릿 화면 레이아웃 
 
 ```
