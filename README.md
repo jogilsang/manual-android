@@ -5,6 +5,12 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+
+### string.xml , string-array, 스트링배열, 스트링어레이
+```
+String[] jobItems = getResources().getStringArray(R.array.auto_job);
+```
+
 ### 인탠트 이미지 겔러리 경로 가져오기
 
 비트맵 가져와서 저장하고 파일 패스로 받아와야함
