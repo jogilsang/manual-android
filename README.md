@@ -7,6 +7,8 @@ https://blog.naver.com/lion_kwon/221271737331
 
 ### 인탠트 이미지 겔러리 경로 가져오기
 
+비트맵 가져와서 저장하고 파일 패스로 받아와야함
+그냥 data.getData()해서 하니까 경로가 안뜸 시@
 ```
 @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
