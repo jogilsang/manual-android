@@ -114,6 +114,11 @@ String[] jobItems = getResources().getStringArray(R.array.auto_job);
 ### 안드로이드 리소스 테블릿 화면 레이아웃 
 
 ```
+dp <-> px 변환  
+https://mhwan.tistory.com/33?category=670856  
+```
+
+```
 Low density Small screens QVGA 240x320 (120dpi):
 
 layout-small-ldpi (240x320)  
