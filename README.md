@@ -2443,7 +2443,45 @@ border.xml
 source : https://frontjang.info/entry/Java-Byte-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%83%81%ED%98%B8-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0  
 
 
-### 안드로이드 알람 리시버 alarm receiver
+### 안드로이드 receiver 리시버 코드로 등록하기
+```
+Manifest 설정
+
+<!-- BroadcastReceiver 액티비티 -->
+
+    <activity android:name.BroadCastReceiverActivity" android:label="" />
+
+     <!-- manifest에 receiver 등록하기
+
+클래스명을 적어준다.-->
+
+        <receiver android:name=".BroadCastReceiverEx">
+
+            <intent-filter>
+
+                <action android:name="mrsohn.samplecode.FIRE"></action>
+
+            </intent-filter>
+
+        </receiver> 
+
+** manifest에 등록 하지 않고 
+자바 코드로 BroadcastReceiver 등록할 수도 있다.
+
+ IntentFilter filler = 
+         new IntentFilter("mrsohn.samplecode.FIRE"); //BroadcastReceiver의 action 값 
+
+//BroadcastReceiver 클래스 
+BroadCastReceiverEx r = new BroadCastReceiverEx();  
+//등록하기       
+registerReceiver(r, iller);             
+
+//해제할 때는
+unregisterReceiver(receiver);
+```
+
+### 안드로이드 알람 리시버 alarm 
+
 
 ```
 버전별로 다름...
