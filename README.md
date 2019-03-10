@@ -695,6 +695,13 @@ progressDialog.();
 
 ```
 
+
+### progresss color 프로그래스바 
+```
+        progressBar.setIndeterminate(true);
+        progressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#00498c"), PorterDuff.Mode.MULTIPLY);
+```
+
 ### autocomletetextview edittext 자동완성 
 ```
 
