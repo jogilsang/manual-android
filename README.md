@@ -675,7 +675,7 @@ public void onStop(){
 [출처] [참고소스] 아이디 비밀번호 저장 (ShredPreference)|작성자 사자머리님
 ```
 
-### progress dialog
+### progress dialog 진행바 다이얼로그 프로그래스바
 
 ```
 ProgressDialog progressDialog = new ProgressDialog(this);
@@ -691,6 +691,8 @@ progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // 스타일 �
 progressDialog.setIndeterminate(true); // 진행 상태 표시 (ex : 20 / 100)
 
 progressDialog.show();
+progressDialog.();
+
 ```
 
 ### autocomletetextview edittext 자동완성 
