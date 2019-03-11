@@ -5,6 +5,25 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 안드로이드 인탠트 액셀 타입 intent type
+그외 여러가지 타입들 :  
+https://anditstory.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%ED%8C%8C%EC%9D%BC-%EC%97%B0%EA%B2%B0-Intent-setDataAndTypeUri-MimeType  
+
+```
+File file = new File(Environment.getExternalStorageDirectory()+ "/filepath/" + filename);
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setDataAndType(Uri.fromFile(file),"application/vnd.ms-excel");
+startActivity(intent);
+
+
+
+} else if (fileExtend.equalsIgnoreCase("xls") || fileExtend.equalsIgnoreCase("xlsx")) 
+{ fileLinkIntent.setDataAndType(Uri.fromFile(file), "application/vnd.ms-excel");
+
+출처: https://anditstory.tistory.com/entry/안드로이드파일-연결-Intent-setDataAndTypeUri-MimeType [i티스토리]
+```
+
+
 ### 파이어베이스 메세징 firebase messsasing 단일기기
 ```
 https://web.postman.co/collections/5922778-ac57714b-e2eb-5abc-d231-6ca5f1a06b53?workspace=e9ce0abd-94b1-4e4d-849e-5eebcf0c7e70#bd2eea26-a13b-b810-781e-ca4f684eab53
