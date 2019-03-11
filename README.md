@@ -5,6 +5,12 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 파이어베이스 메세징 firebase messsasing 단일기기
+```
+https://web.postman.co/collections/5922778-ac57714b-e2eb-5abc-d231-6ca5f1a06b53?workspace=e9ce0abd-94b1-4e4d-849e-5eebcf0c7e70#bd2eea26-a13b-b810-781e-ca4f684eab53
+```
+
+
 ### 이미지 절대경로 이미지뷰 백그라운드 background 넣기
 ```
 File imgFile = new  File("/sdcard/Images/test_image.jpg");
