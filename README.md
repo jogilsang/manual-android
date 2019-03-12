@@ -5,6 +5,9 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 파이어베이스 앱 
+     FirebaseApp.initializeApp(this);
+
 ### read excelfile 리드 액셀파일 엑셀파일 읽기 쓰기
 ```
 
