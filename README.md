@@ -5,6 +5,93 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### read excelfile 리드 액셀파일 엑셀파일 읽기
+```
+ private void readExcelFile(String strDir) {
+
+        try {
+
+            // 코드완료
+            Workbook wb = Workbook.getWorkbook(new java.io.File(strDir));
+
+            if (wb != null) {
+                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+                if (sheet != null) {
+                    int colTotal = sheet.getColumns();    // 전체 컬럼
+                    int rowIndexStart = 1;                  // row 인덱스 시작
+                    int rowTotal = sheet.getColumn(colTotal - 1).length;
+
+                    StringBuilder sb;
+                    for (int row = rowIndexStart; row < rowTotal; row++) {
+                        sb = new StringBuilder();
+
+                        //새로운 행이 시작될떄 Member을 만든다
+
+                        Log.d(TAG, String.valueOf(row) + "번쨰 Member 생성");
+                        Member member = new Member();
+
+                        for (int col = 0; col < colTotal; col++) {
+
+                            String contents = sheet.getCell(col, row).getContents();
+                            sb.append("col" + col + " : " + contents + " , ");
+
+                            // i 행, col열
+                            switch (col) {
+                                case 0:
+
+                                    member.setId(contents);
+                                    break;
+
+                                case 1:
+                                    member.setName(contents);
+
+                                    break;
+
+                                case 2:
+                                    member.setJob(contents);
+                                    break;
+
+                                case 3:
+                                    member.setBirth(contents);
+                                    break;
+
+                                case 4:
+
+                                    member.setDivision(contents);
+                                    break;
+
+                                case 5:
+                                    member.setNonPaymentPeriod(contents);
+                                    break;
+
+                                case 6:
+                                    member.setPhone(contents);
+                                    break;
+
+                                case 7:
+                                    member.setAddress(contents);
+                                    break;
+
+                            }
+                            Log.i("test", sb.toString());
+                        }
+
+                        importList.add(member);
+
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (
+                BiffException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+```
+
 ### 안드로이드 인탠트 액셀 타입 intent type
 그외 여러가지 타입들 :  
 https://anditstory.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%ED%8C%8C%EC%9D%BC-%EC%97%B0%EA%B2%B0-Intent-setDataAndTypeUri-MimeType  
