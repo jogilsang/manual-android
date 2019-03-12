@@ -5,7 +5,123 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
-### read excelfile 리드 액셀파일 엑셀파일 읽기
+### read excelfile 리드 액셀파일 엑셀파일 읽기 쓰기
+```
+
+        try {
+
+            // 액셀 객체 생성
+            WritableWorkbook workbook = Workbook.createWorkbook(newFile);
+
+            // 시트 생성
+            // TODO : 시트이름은 오늘날짜
+
+            long time = System.currentTimeMillis();
+            SimpleDateFormat dayTime = new SimpleDateFormat("yyyyMMdd");
+            String strDayTime = dayTime.format(new Date(time));
+
+            WritableSheet sheet = workbook.createSheet(strDayTime, 0);
+
+            // 셀(Label) 생성
+            Label label;
+
+            // 모델크기
+            int size = 8;
+
+            // 인덱스는 0,0 부터 시작한다
+            // 시작 for문 행 , 나중 for문 열
+            for (int i = 0; i < 1; i++) {
+                for (int j = 0; j < 8; j++) {
+                    // 라벨 방식으로 생성 후  Add
+                    label = null;
+
+                    // Model 값 받아오기
+                    // 번호
+                    // 이름
+                    // 직종
+                    // 생일
+                    // 분류
+                    // 미납월수
+                    // 전화번호
+                    // 주소
+
+                    // i 행, j열
+                    switch (j) {
+                        case 0:
+                            String id = getString(R.string.model_member_1);
+                            // input : 행, 렬 값
+                            label = new Label(j, i, id);
+                            Log.d(TAG, id + " 생성완료");
+                            break;
+
+                        case 1:
+                            String name = getString(R.string.model_member_2);
+                            Log.d(TAG, name + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, name);
+
+                            break;
+
+                        case 2:
+                            String job = getString(R.string.model_member_3);
+                            Log.d(TAG, job + " 생성완료");
+                            // input : 행, 렬 값
+                            label = new Label(j, i, job);
+
+                            break;
+
+                        case 3:
+                            String birth = getString(R.string.model_member_4);
+                            Log.d(TAG, birth + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, birth);
+
+                            break;
+
+                        case 4:
+
+                            String division = getString(R.string.model_member_5);
+
+                            Log.d(TAG, division + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, division);
+
+
+                            break;
+
+                        case 5:
+                            String nonPaymentPerio = getString(R.string.model_member_6);
+
+                            Log.d(TAG, nonPaymentPerio + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, nonPaymentPerio);
+                            break;
+
+                        case 6:
+                            String phone = getString(R.string.model_member_7);
+
+                            Log.d(TAG, phone + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, phone);
+                            break;
+
+                        case 7:
+                            String address = getString(R.string.model_member_8);
+
+                            Log.d(TAG, address + " 생성완료");
+
+                            // input : 행, 렬 값
+                            label = new Label(j, i, address);
+
+                            break;
+
+                    }
+```
 ```
  private void readExcelFile(String strDir) {
 
