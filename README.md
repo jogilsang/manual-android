@@ -92,9 +92,24 @@ https://blog.naver.com/lion_kwon/221271737331
     }
 ```
 
-### 안드로이드 인탠트 액셀 타입 intent type
+### 안드로이드 인탠트 열기 파일 열기 액셀 타입 intent type
 그외 여러가지 타입들 :  
 https://anditstory.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%ED%8C%8C%EC%9D%BC-%EC%97%B0%EA%B2%B0-Intent-setDataAndTypeUri-MimeType  
+
+```
+    private void openFIle() {
+
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+
+        // i.setType("application/*");  //여러가지 Type은 아래 표로 정리해두었습니다.
+        i.setType("application/vnd.ms-excel");  //여러가지 Type은 아래 표로 정리해두었습니다.
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivityForResult(i.createChooser(i,"Open"), REQUEST_EXCEL);
+        //출처: https://kylblog.tistory.com/22 [ylblog]
+
+    }
+```
 
 ```
 File file = new File(Environment.getExternalStorageDirectory()+ "/filepath/" + filename);
