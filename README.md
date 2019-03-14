@@ -7,6 +7,60 @@ https://blog.naver.com/lion_kwon/221271737331
 
 ### 파이어베이스 앱 
      FirebaseApp.initializeApp(this);
+     
+### SharedPreferences get boolean
+```
+    public Boolean getIsActive(){
+
+        SharedPreferences pref = context.getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        // ON,OFF 여부
+        Boolean active =pref.getBoolean("active", false);
+
+        if(active) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+```
+
+```
+
+    public void setOn() {
+
+        SharedPreferences pref = context.getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        // ON,OFF 여부
+        Boolean active = pref.getBoolean("active", false);
+
+        SharedPreferences.Editor editor = pref.edit();
+
+        // 하나 더 추가한다.
+        editor.putBoolean("active", true);
+        editor.commit();
+
+        setOnOffView();
+
+    }
+
+    public void setOff() {
+
+        SharedPreferences pref = context.getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        // ON,OFF 여부
+        Boolean active = pref.getBoolean("active", false);
+
+        SharedPreferences.Editor editor = pref.edit();
+
+        // 하나 더 추가한다.
+        editor.putBoolean("active", false);
+        editor.commit();
+
+        setOnOffView();
+
+    }
+
+```
 
 ### read excelfile 리드 액셀파일 엑셀파일 읽기 쓰기
 ```
