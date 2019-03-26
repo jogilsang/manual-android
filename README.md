@@ -5,6 +5,16 @@ android for me
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
 
+### 웹뷰 멀티 터치
+```
+https://kanais2.tistory.com/296
+```
+
+### 웹뷰 파일 업로드 이미지 업로드
+```
+https://g-y-e-o-m.tistory.com/115
+```
+
 ### 파이어베이스 앱 
      FirebaseApp.initializeApp(this);
      
