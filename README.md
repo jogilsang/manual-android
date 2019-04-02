@@ -3734,6 +3734,29 @@ msg.putExtra(Intent.EXTRA_TITLE,"제목");
 msg.setType("text/plain");
 startActivity(Intent.createChooser(msg, "공유"));
 ```
+
+```
+    <string name="text_share_head">
+ &lt;카카대리운전 어플추천&gt;\n
+ 쓰면 쓸수록 이익이 되는 전국민 필수어플\n
+ ☞ 가입 축하금 5,000원 적립\n
+ ☞ 추천시 추천인에게 1,000원 적립\n
+ ☞ 나의 이용금액의 10퍼센트 적립\n
+ ☞ 추천인 이용시 3퍼센트 추가적립\n
+ ☞ 각지역별로 적립금이 다릅니다(혜택정보참조)\n
+ ☞ 적립금은 10,500원이상시 10,000원 단위로 출금가능합니다.\n
+
+&lt;추천방법&gt;
+ 어플실행후 &lt;설정&gt; - &lt;추천인등록&gt; - &lt;추천인휴대폰번호&gt;에 추천인 전화번호 </string>
+
+    <string name="text_share_tail">
+ 를 입력해주세요\n\n
+안드로이드 고객님은\n
+https://play.google.com/store/apps/details?id=kr.co.kodc.yadaeri&amp;referrer=01063313034\n
+아이폰 고객님은\n
+https://itunes.apple.com/app/id1374885875?mt=8</string>
+```
+
 link share :  
 ```
         // 공유하기
