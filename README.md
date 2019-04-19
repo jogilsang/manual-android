@@ -6,6 +6,37 @@ android for me
 http://color-themes.com/?view=index
 ```
 
+### build gradle
+```
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://maven.google.com" }
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.google.gms:google-services:4.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://maven.google.com" }
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+```
+
 ### constraintLayout
 weight 주는법 :  
 https://blog.naver.com/lion_kwon/221271737331
