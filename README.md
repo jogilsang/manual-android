@@ -2738,6 +2738,22 @@ https://designguidelines.withgoogle.com/wearos/style/color.html#color-dark-color
     android:timePickerMode="spinner"/>
 ```
 
+```
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TimePicker
+            android:id="@+id/time_picker"
+            android:timePickerMode="spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+```
+
 ### 스피너, spinner, 텍스트선택리스트
 ```
         final Spinner s1 = (Spinner) findViewById(R.id.spinner1);
