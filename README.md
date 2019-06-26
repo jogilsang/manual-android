@@ -3,7 +3,14 @@ android for me
 
 ### 안드로이드 스튜디오 색상 변경
 ```
+
 http://color-themes.com/?view=index
+```
+
+### 안드로이드 jar lib import 컴파일
+```
+/* 이곳에 아래와 같이 libs 아래 모든 jar 파일을 컴파일 하도록 설정 하거나 */
+compile fileTree(include: ['*.jar'], dir: 'libs')
 ```
 
 ### build gradle
