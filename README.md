@@ -1,6 +1,12 @@
 # manual-android
 android for me
 
+
+### 안드로이드 플랫폼 툴 adb
+```
+C:\Users\user\AppData\Local\Android\Sdk\platform-tools
+```
+
 ### 안드로이드 스튜디오 색상 변경
 ```
 
