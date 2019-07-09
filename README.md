@@ -2,6 +2,11 @@
 android for me
 
 
+### 안드로이드 블루투스 연동
+```
+https://yeolco.tistory.com/80
+```
+
 ### 안드로이드 플랫폼 툴 adb
 ```
 C:\Users\user\AppData\Local\Android\Sdk\platform-tools
