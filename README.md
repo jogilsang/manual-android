@@ -2,6 +2,12 @@
 android for me
 
 
+### 안드로이드 카드뷰
+```
+implementation 'androidx.cardview:cardview:1.0.0'
+```
+
+
 ### 안드로이드 블루투스 연동
 ```
 https://yeolco.tistory.com/80
