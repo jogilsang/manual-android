@@ -1,5 +1,6 @@
 # manual-android
-android for me
+
+안드로이드 앱의 빠른 제작을 위한 각종 소스 및 템플릿 내용  
 
 
 ### 안드로이드 카드뷰
