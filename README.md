@@ -2,6 +2,30 @@
 
 안드로이드 앱의 빠른 제작을 위한 각종 소스 및 템플릿 내용  
 
+
+
+
+### Gradle 에러
+```
+
+JAVA_LETTER_OR_DIGIT
+
+'com.google.gms:google-services:4.3.2'
+'com.google.gms:google-services:4.2.0
+
+ASCII
+
+android.overridePathCheck=true
+
+manifest merged
+tools:replace="android:appComponentFactory"
+android:appComponentFactory="whateverString"
+
+d8erros
+android.enableD8 = false
+```
+
+
 ### 안드로이드 화면 dp px 계산
 ```
 http://angrytools.com/android/pixelcalc/
