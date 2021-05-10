@@ -11,6 +11,6 @@
 - 파이어베이스 query로 rank 구현하기 (Firebase query)|Android/Web	`2017/07/29 07:38`
 
 ## Trouble Shooting
-Didn't find class "com.google.firebase.provider.FirebaseInitProvider|TroubleShoot	`2019/07/26 12:27`
-Firebase serve --only hosting 에러 및 실행 안될시|TroubleShoot	`2019/02/07 17:29`
-Firebase GlideApp import error|TroubleShoot	`2018/04/27 14:51`
+- Didn't find class "com.google.firebase.provider.FirebaseInitProvider|TroubleShoot	`2019/07/26 12:27`
+- Firebase serve --only hosting 에러 및 실행 안될시|TroubleShoot	`2019/02/07 17:29`
+- Firebase GlideApp import error|TroubleShoot	`2018/04/27 14:51`
