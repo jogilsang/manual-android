@@ -1,2 +1,2 @@
 
-## 2.ReactiveX
+## 2.1.RxJS
