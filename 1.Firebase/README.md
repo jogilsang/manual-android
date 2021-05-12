@@ -29,3 +29,10 @@
 - [Firebase - Can't pass null for argument 'pathString' in child](https://blog.naver.com/jogilsang/221252325367)
 - [Firebase :: java.lang.NullPointerException: Attempt to invoke virtual method](https://blog.naver.com/jogilsang/221226330271)
 - [Firebase : Error:Execution failed for task ':app:processDebugGoogleServices'. > No matching client found for package name](https://blog.naver.com/jogilsang/220937210613)
+
+---
+
+## memo
+
+### 파이어베이스 앱 
+     FirebaseApp.initializeApp(this);
