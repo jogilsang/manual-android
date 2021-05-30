@@ -1,2 +1,2 @@
 
-## 2.3.RxKotlin
+## 2.2.RxJava
