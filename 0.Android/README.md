@@ -4176,3 +4176,32 @@ doInBackground()에서 리턴 한 값을 전달받아서 매개변수로 사용�
 넘겨받은 result를 통해 UI 변경 작업을 진행한다.(ex setText(result))...
 [출처] AsyncTask 사용하기|작성자 스제
 ```
+
+	### soundpool 사운드 효과 - 소리
+	```
+	    // SOUND
+    SoundPool sp;
+	
+	public void setSoundPool() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sp = new SoundPool.Builder().setMaxStreams(10).build();
+        } else {
+            sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 1);
+        }
+
+    }
+
+
+    public void playSound(int soundResId) {
+        // context, resId, priority
+        final int sound = sp.load(MainActivity.this, soundResId, 1);
+        sp.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                // soundId, leftVolumn, rightVolumn, priority, loop, rate
+                soundPool.play(sound, 1f, 1f, 0, 0, 1.0f);
+            }
+        });
+    }
+	```
+	
